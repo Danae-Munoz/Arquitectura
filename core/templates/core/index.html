@@ -1,0 +1,90 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<br>
+<h1 class="text-center titulos">¡Bienvenid@ a Solo Leveling!</h1>
+  <!-- Contenido principal de la pagina CARRUSEL -->
+  <main role="main">
+    <div class="container-fluid pt-2">
+      <br>
+      <section class="text-center">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'core/img/carrusel4.jpg' %}" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'core/img/carrusel2.webp' %}" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'core/img/carrusel3.webp' %}" class="d-block w-100" alt="">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'core/img/carrusel1.jpg' %}" class="d-block w-100" alt="">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Antes</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Después</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <br>
+  {% if productos %}
+    <div class="container-fluid box-shadow " >
+      <div class="row" >
+        {% for producto in productos %}
+          <div class="card col-sm-12 col-md-6 col-lg-3 col-xl-2  border-1 m-2 pt-3 pb-4 pt-2 mb-4 index_foto_fondo" style="width: 21.2rem; ">
+              <a href="{% url 'ficha' producto.id %}" class="link-bloque " style="border-color: rgba(255, 105, 180, 0.5);">
+                
+                <img src="/media/{{ producto.imagen }}" class="card-img-top index_prod_1 center-image"
+                  alt="Foto de un videojuego"/>
+                
+                <h2 class="card-title titulos" style="text-align: center;">{{producto.nombre}}</h2>
+                <br>
+                <h5 class="card-title titulos">{{ producto.html_estado|safe }}</h5>
+
+                <span class="index_precio" style="color: rgb(167, 8, 153);">{{ producto.html_precio|safe }}  </span>
+                <br>
+                <span class="titulos_2">{{ producto.descripcion }}</span>
+                <br>
+                <span class="index_precio" style="color: rgb(179, 145, 176);">{{ producto.html_stock }}</span>
+                <br><br><br>
+                <p>
+                  <a href="{% url 'ficha' producto.id %}" class="btn btn-primary index_btn_comprar">Ver más detalles</a>
+                </p>
+              </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  {% else %}
+
+    <h2 class=" text-center titulos">No se encontraron productos</h2>
+
+  {% endif %}
+  <br><br><br>
+  <p style="font-size: 18px;">
+    <a style="color: #ffffff; " href="{% url 'ropa' %}">
+      <img src="{% static 'core/img/ofertaa.png' %}" style="height: 200px; margin-right: 0px;" />
+      &nbsp;&nbsp;&nbsp;
+      <spain class="btn boton_buscar_anonimo_2 fw-bold" style=" color: #ffffff; height: 100px; font-size: 15px; ">
+        <br>
+        Por compras superiores a $20.000 en productos ya estás concursando <br>
+        ¡¡¡MIRA AQUI LOS PREMIOS!!!
+        <br><br><br>
+      </spain>
+    </a>
+  </p>
+  <br><br><br>
+{% endblock content %}
