@@ -4,87 +4,118 @@
 
 {% block content %}
 <br>
-<h1 class="text-center titulos">¡Galen Salud!</h1>
-  <!-- Contenido principal de la pagina CARRUSEL -->
-  <main role="main">
-    <div class="container-fluid pt-2">
-      <br>
-      <section class="text-center">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="{% static 'core/img/carrusel4.jpg' %}" class="d-block w-100" alt="">
-            </div>
-            <div class="carousel-item">
-              <img src="{% static 'core/img/carrusel2.webp' %}" class="d-block w-100" alt="">
-            </div>
-            <div class="carousel-item">
-              <img src="{% static 'core/img/carrusel3.webp' %}" class="d-block w-100" alt="">
-            </div>
-            <div class="carousel-item">
-              <img src="{% static 'core/img/carrusel1.jpg' %}" class="d-block w-100" alt="">
-            </div>
+<!-- Contenido principal de la página -->
+<div class="card" style="
+    width: 90%; /* Ancho mayor para que sea más largo horizontalmente */
+    max-width: 1000px; /* Límites máximos */
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url('{% static "core/img/hola.jpg" %}');
+    background-size: cover;
+    background-position: center;
+    color: white;">
+  <div class="card-body" style="
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;">
+      <img src="{% static 'core/img/ok Logo ESCUELA 2022-06.png' %}" class="logo-menu-superior" style="height: 40px;" alt="">
+    <h5 style="
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;">
+      Bienvenidos a Nuestro Centro Médico
+    </h5>
+    <div style="
+        height: 2px;
+        background-color: white;
+        margin: 10px auto;
+        width: 50%;"></div>
+    <p style="
+        font-size: 2rem;
+        text-align: center;
+        color:#ADD8E6">
+      Tu salud es nuestra prioridad, reserva tu hora en un clic.
+    </p>
+    <img src="{% static 'core/img/ok Logo ESCUELA 2022-06.png' %}" class="logo-menu-superior " style="height: 40px; float: right;margin-left:10px" alt="">
+    
+  </div>
+</div>
+
+<main role="main">
+  <div class="container-fluid pt-2">
+    <br>
+    <section class="text-center">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'core/img/carrusel4.jpg' %}" class="d-block w-100" alt="">
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Antes</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Después</span>
-          </button>
+          <div class="carousel-item">
+            <img src="{% static 'core/img/carrusel2.webp' %}" class="d-block w-100" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'core/img/carrusel3.webp' %}" class="d-block w-100" alt="">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'core/img/carrusel1.jpg' %}" class="d-block w-100" alt="">
+          </div>
         </div>
-      </section>
-    </div>
-  </main>
-  
-  <br>
-  {% if productos %}
-    <div class="container-fluid box-shadow " >
-      <div class="row" >
-        {% for producto in productos %}
-          <div class="card col-sm-12 col-md-6 col-lg-3 col-xl-2  border-1 m-2 pt-3 pb-4 pt-2 mb-4 index_foto_fondo" style="width: 21.2rem; ">
-              <a href="{% url 'ficha' producto.id %}" class="link-bloque " style="border-color: rgba(255, 105, 180, 0.5);">
-                
-                <img src="/media/{{ producto.imagen }}" class="card-img-top index_prod_1 center-image"
-                  alt="Foto de un videojuego"/>
-                
-                <h2 class="card-title titulos" style="text-align: center;">{{producto.nombre}}</h2>
-                <br>
-                <h5 class="card-title titulos">{{ producto.html_estado|safe }}</h5>
-
-                <span class="index_precio" style="color: rgb(167, 8, 153);">{{ producto.html_precio|safe }}  </span>
-                <br>
-                <span class="titulos_2">{{ producto.descripcion }}</span>
-                <br>
-                <span class="index_precio" style="color: rgb(179, 145, 176);">{{ producto.html_stock }}</span>
-                <br><br><br>
-                <p>
-                  <a href="{% url 'ficha' producto.id %}" class="btn btn-primary index_btn_comprar">Ver más detalles</a>
-                </p>
-              </a>
-          </div>
-        {% endfor %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Antes</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Después</span>
+        </button>
       </div>
+    </section>
+  </div>
+</main>
+
+<br>
+{% if productos %}
+  <div class="container-fluid box-shadow">
+    <div class="row">
+      {% for producto in productos %}
+        <div class="card col-sm-12 col-md-6 col-lg-3 col-xl-2 border-1 m-2 pt-3 pb-4 pt-2 mb-4 index_foto_fondo" style="width: 21.2rem;">
+          <a href="{% url 'ficha' producto.id %}" class="link-bloque">
+            <img src="/media/{{ producto.imagen }}" class="card-img-top index_prod_1 center-image" alt="Foto de un videojuego"/>
+            <h2 class="card-title titulos" style="text-align: center;">{{ producto.nombre }}</h2>
+            <br>
+            <h5 class="card-title titulos">{{ producto.html_estado|safe }}</h5>
+            <span class="index_precio" style="color: rgb(167, 8, 153);">{{ producto.html_precio|safe }}</span>
+            <br>
+            <span class="titulos_2">{{ producto.descripcion }}</span>
+            <br>
+            <span class="index_precio" style="color: rgb(179, 145, 176);">{{ producto.html_stock }}</span>
+            <br><br><br>
+            <p>
+              <a href="{% url 'ficha' producto.id %}" class="btn btn-primary index_btn_comprar">Ver más detalles</a>
+            </p>
+          </a>
+        </div>
+      {% endfor %}
     </div>
-
-  {% else %}
-
-    <h2 class=" text-center titulos">No se encontraron productos</h2>
-
-  {% endif %}
-  <br><br><br>
-  <p style="font-size: 18px;">
-    <a style="color: #ffffff; " href="{% url 'ropa' %}">
-      <img src="{% static 'core/img/ofertaa.png' %}" style="height: 200px; margin-right: 0px;" />
-      &nbsp;&nbsp;&nbsp;
-      <spain class="btn boton_buscar_anonimo_2 fw-bold" style=" color: #ffffff; height: 100px; font-size: 15px; ">
-        <br>
-        Por compras superiores a $20.000 en productos ya estás concursando <br>
-        ¡¡¡MIRA AQUI LOS PREMIOS!!!
-        <br><br><br>
-      </spain>
-    </a>
-  </p>
-  <br><br><br>
+  </div>
+{% else %}
+  <h2 class="text-center titulos">No se encontraron productos</h2>
+{% endif %}
+<br><br><br>
+<p style="font-size: 18px;">
+  <a style="color: #ffffff;" href="{% url 'ropa' %}">
+    <img src="{% static 'core/img/ofertaa.png' %}" style="height: 200px; margin-right: 0px;" />
+    &nbsp;&nbsp;&nbsp;
+    <spain class="btn boton_buscar_anonimo_2 fw-bold" style="color: #ffffff; height: 100px; font-size: 15px;">
+      <br>
+      Por compras superiores a $20.000 en productos ya estás concursando <br>
+      ¡¡¡MIRA AQUI LOS PREMIOS!!!
+      <br><br><br>
+    </spain>
+  </a>
+</p>
+<br><br><br>
 {% endblock content %}
