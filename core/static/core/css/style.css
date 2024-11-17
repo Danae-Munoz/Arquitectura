@@ -21,7 +21,7 @@ input, textarea, select {
 
 body {
   /* Fondo negro */
-  background-color: #000000;
+  background-color: #FFFFFF;
   /* Color de texto blanco */
   color: #FFFFFF;
 }
@@ -35,8 +35,8 @@ body {
 /*NAVEGADOR ANONIMO*/
 .nav_anonimo {
   background-image: linear-gradient(to right, white );
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-bottom: 1px solid rgba(255, 105, 180, 0.5);
+  box-shadow: 0 2px 4px #ADD8E6;
+  border-bottom: 1px solid #ADD8E6;
   color: #FFFFFF;
 }
 
@@ -139,7 +139,7 @@ button.btn svg {
   color:#ba5f74;
 }
 .navbar-nav .nav-link {
-  color: #ba5f74 !important; 
+  color: #ffffff !important; 
 }
 
 /*FICHA*/
