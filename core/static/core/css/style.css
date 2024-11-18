@@ -48,7 +48,7 @@ body {
 }
 
 .boton_buscar_anonimo_2{
-  background-image: linear-gradient(to right, #ef89a1, #e7c2c2);
+  background-image: linear-gradient(to right, #23547c, ##6ec1e4);
   box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
   border-color: rgba(255, 105, 180, 0.5);
   color: #000000;
@@ -131,12 +131,11 @@ button.btn svg {
   
 }
 .titulos{
-  color:#ef89a1;
+  color:#6ec1e4   ;
   
 }
 .titulos_2{
-  background-image: linear-gradient(to right, #000000, #000000);
-  color:#ba5f74;
+  color:#23547c;
 }
 .navbar-nav .nav-link {
   color: #ffffff !important; 
@@ -172,9 +171,10 @@ button.btn svg {
 
 /*NOSOTROS*/
 .borde_nosotros{
-  background-color: #000000;
+  background-color: #23547c;
+  padding: 10px;
   border-radius: 15px; 
-  border: 3px solid rgba(255, 105, 180, 0.5);
+  border: 5px solid white;
   
 }
 .boton_correo{
@@ -369,7 +369,7 @@ td.ver-detalle:hover {
 #form .form-group > label,
 #form .form-group > .helptext,
 #form .form-check-label {
-    color: #ef89a1;
+    color: #23547c;
     font-weight: bold;
     font-size: 18px; 
 }
