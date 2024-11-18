@@ -65,29 +65,23 @@
           <div class="carousel-item active position-relative">
             <img src="{% static 'core/img/fondo1.jpg' %}" class="d-block w-100" alt="">
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-              <h2 class="fw-bold text-white">Bienvenidos al Centro Médico Galenos</h2>
-              <p class="text-white">Tu salud, nuestra prioridad. Confía en nuestros especialistas para el cuidado de ti y tu familia.</p>
+              <h2 class="fw-bold text-primary">Exámenes Médicos en el Centro Médico Galen Salud</h2>
+              <p class="text-light-blue">Realiza tus exámenes médicos con nosotros. Contamos con equipos de última tecnología y un equipo de profesionales altamente capacitados para brindarte resultados precisos y oportunos.</p>
+              
             </div>
           </div>
           <div class="carousel-item position-relative">
-            <img src="{% static 'core/img/carrusel2.webp' %}" class="d-block w-100" alt="">
+            <img src="{% static 'core/img/fondo2.jpg' %}" class="d-block w-100" alt="">
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-              <h2 class="fw-bold text-white">Atención de Calidad</h2>
-              <p class="text-white">Tecnología avanzada y un equipo dedicado a tu bienestar.</p>
+              <h2 class="fw-bold text-primary">Atención de Calidad</h2>
+              <p class="text-light-blue">Tecnología avanzada y un equipo dedicado a tu bienestar.</p>
             </div>
           </div>
           <div class="carousel-item position-relative">
-            <img src="{% static 'core/img/carrusel3.webp' %}" class="d-block w-100" alt="">
+            <img src="{% static 'core/img/fondo3.jpg' %}" class="d-block w-100" alt="">
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-              <h2 class="fw-bold text-white">Tu Salud es Nuestra Prioridad</h2>
-              <p class="text-white">Consulta con nuestros especialistas en el momento que necesites.</p>
-            </div>
-          </div>
-          <div class="carousel-item position-relative">
-            <img src="{% static 'core/img/carrusel1.jpg' %}" class="d-block w-100" alt="">
-            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-              <h2 class="fw-bold text-white">Estamos Aquí para Ti</h2>
-              <p class="text-white">Con instalaciones modernas y personal comprometido.</p>
+              <h2 class="fw-bold text-primary">Estamos Aquí para Ti</h2>
+              <p class="text-light-blue">Con instalaciones modernas y personal comprometido.</p>
             </div>
           </div>
         </div>
@@ -102,20 +96,59 @@
       </div>
     </section>
   </div>
+
+  <style>
+    /* Tipografía y colores */
+    body {
+      font-family: 'Roboto', sans-serif; /* También puedes usar Open Sans */
+    }
+
+    .text-primary {
+      color: #0056b3; /* Azul hospital */
+    }
+
+    .text-light-blue {
+      color: #6ec1e4; /* Celeste claro */
+    }
+
+    /* Estilo para las leyendas del carrusel */
+    .carousel-caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-caption h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .carousel-caption p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+  </style>
 </main>
 
 
+
 <section class="container mt-5 text-center">
-  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #000;">SERVICIOS</h2>
-  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #a00;">
+  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #333;">SERVICIOS</h2>
+  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #007bff;">
   
   <div class="row justify-content-center mt-4">
     <div class="col-md-4">
-      <div class="card shadow" style="border: none;">
-        <div class="card-body">
-          <img src="{% static 'core/img/especialidades.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px;" alt="Especialidades Médicas">
-          <h4 class="card-title">Especialidades Médicas</h4>
-          <p class="card-text">
+      <div class="card shadow-sm" style="border: none; border-radius: 25px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="card-body text-center">
+          <img src="{% static 'core/img/especialidades.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px; border: 6px solid #007bff;" alt="Especialidades Médicas">
+          <h4 class="card-title" style="font-style: italic; color: #004080; font-size: 1.25rem;">Especialidades Médicas</h4>
+          <p class="card-text" style="font-style: italic; color: #555; font-size: 1rem;">
             Contamos con especialistas en diversas áreas de la medicina para ofrecer un diagnóstico y tratamiento avanzados.
           </p>
         </div>
@@ -123,11 +156,11 @@
     </div>
 
     <div class="col-md-4">
-      <div class="card shadow" style="border: none;">
-        <div class="card-body">
-          <img src="{% static 'core/img/pediatria.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px;" alt="Pediatría">
-          <h4 class="card-title">Pediatría</h4>
-          <p class="card-text">
+      <div class="card shadow-sm" style="border: none; border-radius: 25px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="card-body text-center">
+          <img src="{% static 'core/img/pediatria.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px; border: 6px solid #007bff;" alt="Pediatría">
+          <h4 class="card-title" style="font-style: italic; color: #004080; font-size: 1.25rem;">Pediatría</h4>
+          <p class="card-text" style="font-style: italic; color: #555; font-size: 1rem;">
             Atendemos a los más pequeños de la casa con un equipo especializado en el bienestar infantil.
           </p>
         </div>
@@ -135,11 +168,11 @@
     </div>
 
     <div class="col-md-4">
-      <div class="card shadow" style="border: none;">
-        <div class="card-body">
-          <img src="{% static 'core/img/consulta_general.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px;" alt="Consulta General">
-          <h4 class="card-title">Consulta General</h4>
-          <p class="card-text">
+      <div class="card shadow-sm" style="border: none; border-radius: 25px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div class="card-body text-center">
+          <img src="{% static 'core/img/consulta_general.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px; border: 6px solid #007bff;" alt="Consulta General">
+          <h4 class="card-title" style="font-style: italic; color: #004080; font-size: 1.25rem;">Consulta General</h4>
+          <p class="card-text" style="font-style: italic; color: #555; font-size: 1rem;">
             Ofrecemos consultas generales para diagnosticar y tratar tus necesidades médicas con el mayor profesionalismo.
           </p>
         </div>
@@ -147,23 +180,23 @@
     </div>
   </div>
 </section>
+
 <section class="container mt-5 text-center">
-  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #000;">TESTIMONIOS</h2>
-  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #a00;">
+  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #333;">TESTIMONIOS</h2>
+  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #007bff;">
   
   <div class="row justify-content-center mt-4">
-    <!-- Testimonio 1 -->
     <div class="col-md-4">
-      <div class="card shadow" style="border: none; border-top: 3px solid #a00;">
-        <div class="card-body">
-          <p class="text-muted" style="font-style: italic; font-size: 1.2rem;">
+      <div class="card shadow-lg" style="border: none; border-top: 4px solid #007bff; border-radius: 20px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+        <div class="card-body text-center">
+          <p class="text-muted" style="font-style: italic; font-size: 1.2rem; color: #555;">
             <i class="fas fa-quote-left"></i>
             Excelente servicio. Reservar una cita es muy fácil y el personal es muy profesional.
             <i class="fas fa-quote-right"></i>
           </p>
-          <img src="{% static 'core/img/testimonio1.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px;" alt="Juan Pérez">
-          <h5 class="card-title">Juan Pérez</h5>
-          <p class="card-text text-muted">Paciente satisfecho</p>
+          <img src="{% static 'core/img/testimonio1.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px; border: 5px solid #007bff;" alt="Juan Pérez">
+          <h5 class="card-title" style="font-style: italic; color: #004080;">Juan Pérez</h5>
+          <p class="card-text text-muted" style="font-style: italic; color: #555;">Paciente satisfecho</p>
           <p class="text-warning">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -175,18 +208,17 @@
       </div>
     </div>
 
-    <!-- Testimonio 2 -->
     <div class="col-md-4">
-      <div class="card shadow" style="border: none; border-top: 3px solid #a00;">
-        <div class="card-body">
-          <p class="text-muted" style="font-style: italic; font-size: 1.2rem;">
+      <div class="card shadow-lg" style="border: none; border-top: 4px solid #007bff; border-radius: 20px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+        <div class="card-body text-center">
+          <p class="text-muted" style="font-style: italic; font-size: 1.2rem; color: #555;">
             <i class="fas fa-quote-left"></i>
             La atención pediátrica es excepcional. Mi hija siempre se siente cómoda durante sus consultas.
             <i class="fas fa-quote-right"></i>
           </p>
-          <img src="{% static 'core/img/testimonio2.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px;" alt="María López">
-          <h5 class="card-title">María López</h5>
-          <p class="card-text text-muted">Madre de paciente</p>
+          <img src="{% static 'core/img/testimonio2.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px; border: 5px solid #007bff;" alt="María López">
+          <h5 class="card-title" style="font-style: italic; color: #004080;">María López</h5>
+          <p class="card-text text-muted" style="font-style: italic; color: #555;">Madre de paciente</p>
           <p class="text-warning">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -198,18 +230,17 @@
       </div>
     </div>
 
-    <!-- Testimonio 3 -->
     <div class="col-md-4">
-      <div class="card shadow" style="border: none; border-top: 3px solid #a00;">
-        <div class="card-body">
-          <p class="text-muted" style="font-style: italic; font-size: 1.2rem;">
+      <div class="card shadow-lg" style="border: none; border-top: 4px solid #007bff; border-radius: 20px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+        <div class="card-body text-center">
+          <p class="text-muted" style="font-style: italic; font-size: 1.2rem; color: #555;">
             <i class="fas fa-quote-left"></i>
             Los especialistas son muy atentos y resuelven todas mis dudas. Recomiendo el centro al 100%.
             <i class="fas fa-quote-right"></i>
           </p>
-          <img src="{% static 'core/img/testimonio3.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px;" alt="Ana Torres">
-          <h5 class="card-title">Ana Torres</h5>
-          <p class="card-text text-muted">Paciente recurrente</p>
+          <img src="{% static 'core/img/testimonio3.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px; border: 5px solid #007bff;" alt="Ana Torres">
+          <h5 class="card-title" style="font-style: italic; color: #004080;">Ana Torres</h5>
+          <p class="card-text text-muted" style="font-style: italic; color: #555;">Paciente recurrente</p>
           <p class="text-warning">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -222,6 +253,7 @@
     </div>
   </div>
 </section>
+
 
 
 
