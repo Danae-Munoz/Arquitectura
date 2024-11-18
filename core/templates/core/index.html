@@ -6,9 +6,10 @@
 <br>
 <!-- Contenido principal de la página -->
 <div class="card" style="
-    width: 90%; /* Ancho mayor para que sea más largo horizontalmente */
-    max-width: 1000px; /* Límites máximos */
+    width: 90%; 
+    max-width: 9000px; 
     margin: 20px auto;
+    height: 500px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -22,45 +23,72 @@
       border-radius: 15px;">
       <img src="{% static 'core/img/ok Logo ESCUELA 2022-06.png' %}" class="logo-menu-superior" style="height: 40px;" alt="">
     <h5 style="
-        font-size: 3rem;
+        font-size: 4rem;
         font-weight: bold;
         text-align: center;
-        margin-bottom: 10px;">
+        margin-bottom: 10px;
+        font-family: 'Roboto Slab', serif;
+        font-style: italic;">
       Bienvenidos a Nuestro Centro Médico
+      <br>
+      Galen Salud
     </h5>
     <div style="
         height: 2px;
         background-color: white;
         margin: 10px auto;
         width: 50%;"></div>
+        <br>
     <p style="
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: center;
-        color:#ADD8E6">
-      Tu salud es nuestra prioridad, reserva tu hora en un clic.
+        color:#ADD8E6;
+        font-family: 'Georgia', serif;">
+        En nuestro centro médico, tu bienestar es lo más importante para nosotros. 
+        <br>
+        Ofrecemos un servicio personalizado para que cuides de tu salud de manera sencilla 
+        y accesible. 
+        <br>
+        Reserva tu hora con solo un clic y deja que nuestro equipo de expertos 
+        se encargue del resto.
     </p>
+    <br><br>
     <img src="{% static 'core/img/ok Logo ESCUELA 2022-06.png' %}" class="logo-menu-superior " style="height: 40px; float: right;margin-left:10px" alt="">
-    
   </div>
 </div>
 
 <main role="main">
   <div class="container-fluid pt-2">
-    <br>
     <section class="text-center">
       <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{% static 'core/img/carrusel4.jpg' %}" class="d-block w-100" alt="">
+          <div class="carousel-item active position-relative">
+            <img src="{% static 'core/img/fondo1.jpg' %}" class="d-block w-100" alt="">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+              <h2 class="fw-bold text-white">Bienvenidos al Centro Médico Galenos</h2>
+              <p class="text-white">Tu salud, nuestra prioridad. Confía en nuestros especialistas para el cuidado de ti y tu familia.</p>
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item position-relative">
             <img src="{% static 'core/img/carrusel2.webp' %}" class="d-block w-100" alt="">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+              <h2 class="fw-bold text-white">Atención de Calidad</h2>
+              <p class="text-white">Tecnología avanzada y un equipo dedicado a tu bienestar.</p>
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item position-relative">
             <img src="{% static 'core/img/carrusel3.webp' %}" class="d-block w-100" alt="">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+              <h2 class="fw-bold text-white">Tu Salud es Nuestra Prioridad</h2>
+              <p class="text-white">Consulta con nuestros especialistas en el momento que necesites.</p>
+            </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item position-relative">
             <img src="{% static 'core/img/carrusel1.jpg' %}" class="d-block w-100" alt="">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+              <h2 class="fw-bold text-white">Estamos Aquí para Ti</h2>
+              <p class="text-white">Con instalaciones modernas y personal comprometido.</p>
+            </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -75,6 +103,127 @@
     </section>
   </div>
 </main>
+
+
+<section class="container mt-5 text-center">
+  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #000;">SERVICIOS</h2>
+  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #a00;">
+  
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4">
+      <div class="card shadow" style="border: none;">
+        <div class="card-body">
+          <img src="{% static 'core/img/especialidades.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px;" alt="Especialidades Médicas">
+          <h4 class="card-title">Especialidades Médicas</h4>
+          <p class="card-text">
+            Contamos con especialistas en diversas áreas de la medicina para ofrecer un diagnóstico y tratamiento avanzados.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow" style="border: none;">
+        <div class="card-body">
+          <img src="{% static 'core/img/pediatria.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px;" alt="Pediatría">
+          <h4 class="card-title">Pediatría</h4>
+          <p class="card-text">
+            Atendemos a los más pequeños de la casa con un equipo especializado en el bienestar infantil.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow" style="border: none;">
+        <div class="card-body">
+          <img src="{% static 'core/img/consulta_general.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px;" alt="Consulta General">
+          <h4 class="card-title">Consulta General</h4>
+          <p class="card-text">
+            Ofrecemos consultas generales para diagnosticar y tratar tus necesidades médicas con el mayor profesionalismo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container mt-5 text-center">
+  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #000;">TESTIMONIOS</h2>
+  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #a00;">
+  
+  <div class="row justify-content-center mt-4">
+    <!-- Testimonio 1 -->
+    <div class="col-md-4">
+      <div class="card shadow" style="border: none; border-top: 3px solid #a00;">
+        <div class="card-body">
+          <p class="text-muted" style="font-style: italic; font-size: 1.2rem;">
+            <i class="fas fa-quote-left"></i>
+            Excelente servicio. Reservar una cita es muy fácil y el personal es muy profesional.
+            <i class="fas fa-quote-right"></i>
+          </p>
+          <img src="{% static 'core/img/testimonio1.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px;" alt="Juan Pérez">
+          <h5 class="card-title">Juan Pérez</h5>
+          <p class="card-text text-muted">Paciente satisfecho</p>
+          <p class="text-warning">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonio 2 -->
+    <div class="col-md-4">
+      <div class="card shadow" style="border: none; border-top: 3px solid #a00;">
+        <div class="card-body">
+          <p class="text-muted" style="font-style: italic; font-size: 1.2rem;">
+            <i class="fas fa-quote-left"></i>
+            La atención pediátrica es excepcional. Mi hija siempre se siente cómoda durante sus consultas.
+            <i class="fas fa-quote-right"></i>
+          </p>
+          <img src="{% static 'core/img/testimonio2.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px;" alt="María López">
+          <h5 class="card-title">María López</h5>
+          <p class="card-text text-muted">Madre de paciente</p>
+          <p class="text-warning">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonio 3 -->
+    <div class="col-md-4">
+      <div class="card shadow" style="border: none; border-top: 3px solid #a00;">
+        <div class="card-body">
+          <p class="text-muted" style="font-style: italic; font-size: 1.2rem;">
+            <i class="fas fa-quote-left"></i>
+            Los especialistas son muy atentos y resuelven todas mis dudas. Recomiendo el centro al 100%.
+            <i class="fas fa-quote-right"></i>
+          </p>
+          <img src="{% static 'core/img/testimonio3.jpg' %}" class="rounded mb-3" style="width: 100px; height: 100px;" alt="Ana Torres">
+          <h5 class="card-title">Ana Torres</h5>
+          <p class="card-text text-muted">Paciente recurrente</p>
+          <p class="text-warning">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <br>
 {% if productos %}
@@ -104,18 +253,5 @@
 {% else %}
   <h2 class="text-center titulos">No se encontraron productos</h2>
 {% endif %}
-<br><br><br>
-<p style="font-size: 18px;">
-  <a style="color: #ffffff;" href="{% url 'ropa' %}">
-    <img src="{% static 'core/img/ofertaa.png' %}" style="height: 200px; margin-right: 0px;" />
-    &nbsp;&nbsp;&nbsp;
-    <spain class="btn boton_buscar_anonimo_2 fw-bold" style="color: #ffffff; height: 100px; font-size: 15px;">
-      <br>
-      Por compras superiores a $20.000 en productos ya estás concursando <br>
-      ¡¡¡MIRA AQUI LOS PREMIOS!!!
-      <br><br><br>
-    </spain>
-  </a>
-</p>
 <br><br><br>
 {% endblock content %}

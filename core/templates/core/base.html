@@ -177,37 +177,104 @@
 
   <!-- FOOTER -->
   <br><br><br>
-  <footer id="footer">
+  <footer>
+    <style>
+        /* General Styles */
+        footer {
+            background-color: #e3f2fd; /* Fondo celeste claro */
+            color: #0d47a1; /* Azul fuerte para el texto */
+            font-family: 'Times New Roman', serif; /* Tipografía similar a la de la imagen */
+            padding: 20px 0;
+        }
+
+        footer h5 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #0d47a1; /* Línea azul debajo del título */
+            display: inline-block;
+        }
+
+        footer p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        footer a {
+            color: #0d47a1;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #083b8b; /* Azul más oscuro */
+        }
+
+        /* Formulario */
+        footer form {
+            margin-top: 20px;
+        }
+
+        footer .form-control {
+            border: 1px solid #0d47a1;
+            border-radius: 0;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        footer .btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        footer .btn:hover {
+            background-color: #083b8b;
+        }
+
+        /* Mapa */
+        footer iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+
     <div class="container text-center">
-      <p>
-        <a class="color_footer" href="#">Volver arriba</a>
-        &nbsp; &nbsp; <!--espaciado entre palabras-->
-      </p>
-      <p class="color_footer">
-        <!--icon whatsapp-->
-        <svg class="color_footer" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-        </svg>
-        whatsapp:+56 9 1234 1234
-        &nbsp; &nbsp;
-        <svg class="color_footer" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-        </svg>
-        Facebook
-        &nbsp; &nbsp;
-        <svg class="color_footer" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.47.98.923 1.417.448.447.892.718 1.417.923.509.198 1.09.333 1.942.372.852.038 1.125.048 3.297.048 2.172 0 2.444-.01 3.297-.048.851-.04 1.433-.174 1.942-.372a3.866 3.866 0 0 0 1.417-.923 3.904 3.904 0 0 0 .923-1.417c.198-.509.333-1.09.372-1.942.038-.852.048-1.125.048-3.297 0-2.174-.01-2.446-.048-3.297-.04-.85-.174-1.432-.372-1.942a3.873 3.873 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42C12.732.222 12.15.087 11.3.048 10.444.01 10.172 0 8 0zm0 1.45c2.131 0 2.383.01 3.227.047.78.035 1.203.166 1.485.276.374.145.641.318.922.6.281.28.453.548.598.922.11.282.241.704.276 1.485.038.844.048 1.096.048 3.228 0 2.131-.01 2.384-.048 3.228-.035.78-.166 1.203-.276 1.485a2.45 2.45 0 0 1-.6.922c-.28.281-.548.453-.922.598-.282.11-.704.241-1.485.276-.844.038-1.096.048-3.227.048-2.132 0-2.384-.01-3.228-.048-.78-.035-1.203-.166-1.485-.276a2.456 2.456 0 0 1-.922-.6 2.45 2.45 0 0 1-.598-.922c-.11-.282-.241-.704-.276-1.485-.038-.844-.048-1.096-.048-3.227 0-2.132.01-2.384.048-3.228.035-.78.166-1.203.276-1.485.145-.374.318-.641.6-.922.28-.281.548-.453.922-.598.282-.11.704-.241 1.485-.276.844-.038 1.096-.048 3.228-.048zm0 2.527a4.027 4.027 0 1 0 0 8.054 4.027 4.027 0 0 0 0-8.054zm0 1.45a2.577 2.577 0 1 1 0 5.154 2.577 2.577 0 0 1 0-5.154zm5.103-.564a.94.94 0 1 0 0 1.88.94.94 0 0 0 0-1.88zm-5.103.752a3.315 3.315 0 1 0 0 6.63 3.315 3.315 0 0 0 0-6.63z"/>
-        </svg>
-        Instagram
-        &nbsp; &nbsp;
-        <svg class="color_footer" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.708 2.825L15 11.383V5.383zM1 5.383v5.991l4.708-2.825L1 5.383zm.396 6.855 4.753-2.856.761.457a.5.5 0 0 0 .478 0l.761-.457 4.753 2.856H1.396z"/>
-        </svg>
-        contacto@company.com
-      </p>
+        <h5>Contacto</h5>
+        <p>Manhattan, New York, NY, United States</p>
+        <p>📞 999-7777-000</p>
+        <p>📧 <a href="mailto:danaemuopi@gmail.com">danaemuopi@gmail.com</a></p>
+        <p>🕒 Mon-Fri - 08:00-19:00</p>
+
+        <form>
+            <div>
+                <input type="text" class="form-control" placeholder="Nombre">
+            </div>
+            <div>
+                <input type="tel" class="form-control" placeholder="Teléfono">
+            </div>
+            <div>
+                <input type="email" class="form-control" placeholder="Dirección de correo electrónico">
+            </div>
+            <div>
+                <textarea class="form-control" rows="4" placeholder="Mensaje"></textarea>
+            </div>
+            <button type="submit" class="btn">Contacto</button>
+        </form>
+
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.835474158658!2d-73.9712484!3d40.7830607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ3JzAwLjYiTiA3M8KwNTgnMTUuNCJX!5e0!3m2!1ses!2sus!4v1636928284600!5m2!1ses!2sus">
+        </iframe>
     </div>
-    <br>
-  </footer>
+</footer>
+
+
+
 
   <!-- BLOQUE DE SCRIPTS COMPARTIDOS POR TODAS LAS PAGINAS -->
   <div class="pagelayout-4">
