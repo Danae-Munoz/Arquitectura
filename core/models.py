@@ -229,3 +229,4 @@ class DetalleBoleta(models.Model):
         }
 
 
+    

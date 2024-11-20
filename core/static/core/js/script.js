@@ -217,3 +217,19 @@ document.getElementById('upload-image').addEventListener('change', function() {
 document.getElementById('id_btnLimpiar').addEventListener('click', function() {
   document.getElementById('miFormulario').reset();
 });
+
+// Obtener el botón y el contenedor de productos
+const mostrarBtn = document.getElementById('mostrarBtn');
+const productosContainer = document.getElementById('productosContainer');
+
+// Agregar un evento de clic al botón
+mostrarBtn.addEventListener('click', function() {
+  // Cambiar el estilo de display entre 'none' y 'block'
+  if (productosContainer.style.display === 'none') {
+    productosContainer.style.display = 'block';
+    mostrarBtn.textContent = 'Ocultar Servicios';  // Cambiar el texto del botón
+  } else {
+    productosContainer.style.display = 'none';
+    mostrarBtn.textContent = 'Mostrar Servicios';  // Cambiar el texto del botón
+  }
+});

@@ -9,7 +9,7 @@
     width: 90%; 
     max-width: 9000px; 
     margin: 20px auto;
-    height: 500px;
+    height: 300px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -44,18 +44,183 @@
         text-align: center;
         color:#ADD8E6;
         font-family: 'Georgia', serif;">
-        En nuestro centro médico, tu bienestar es lo más importante para nosotros. 
-        <br>
-        Ofrecemos un servicio personalizado para que cuides de tu salud de manera sencilla 
-        y accesible. 
-        <br>
-        Reserva tu hora con solo un clic y deja que nuestro equipo de expertos 
-        se encargue del resto.
+        
     </p>
     <br><br>
     <img src="{% static 'core/img/ok Logo ESCUELA 2022-06.png' %}" class="logo-menu-superior " style="height: 40px; float: right;margin-left:10px" alt="">
   </div>
 </div>
+<section class="container mt-5 text-center">
+  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #333;">SERVICIOS</h2>
+  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #007bff;">
+</section >
+
+<style>
+  /* Estilo para el botón */
+  #mostrarBtn {
+    width: 200px;
+    font-size: 18px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #mostrarBtn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Contenedor de servicios con animación de opacidad */
+  #productosContainer {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  /* Estilos para los productos y sus elementos */
+  .card {
+    width: 21.2rem;
+  }
+
+ 
+
+  .index_btn_comprar {
+    background-color: #007bff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .index_btn_comprar:hover {
+    background-color: #0056b3;
+  }
+
+  /* Títulos y otros estilos */
+  .titulos {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+  }
+
+  .index_precio {
+    color: #004080;
+  }
+
+  .container-fluid {
+    margin-top: 20px;
+  }
+</style>
+
+
+<br>
+<!--boton-->
+<div style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+  <button id="mostrarBtn" class="btn btn-medical mb-3">
+    <i class="fas fa-chevron-down" style="margin-right: 10px;"></i> Mostrar Servicios
+  </button>
+</div>
+
+<!-- Asegúrate de incluir Font Awesome para los íconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+  /* Estilo para el botón con un diseño más acorde a un centro médico */
+  #mostrarBtn {
+    width: calc(100% - 40px); /* Ancho de 100% menos 20px de margen a cada lado */
+    padding: 15px 25px; /* Aumentar el padding para hacerlo más grande */
+    font-size: 18px; /* Aumentar el tamaño de la fuente */
+    border-radius: 50px; /* Bordes redondeados */
+    background-color: #ADD8E6; /* Verde más profesional y relacionado con la salud */
+    color: black;
+    border: none;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-family: 'Roboto', sans-serif; /* Tipografía profesional */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0 20px; /* Margen de 20px a cada lado */
+  }
+
+  #mostrarBtn:hover {
+    background-color: #ADD8E6; /* Un tono más oscuro de verde en hover */
+    transform: scale(1.05); /* Hacer el botón un poco más grande cuando se pasa el mouse */
+  }
+
+  #mostrarBtn:focus {
+    outline: none; /* Eliminar el contorno cuando se hace clic */
+    box-shadow: 0 0 10px rgba(192, 244, 229, 0.6); /* Resaltar el botón con sombra */
+  }
+
+
+
+  /* Asegurar que el ícono se vea bien al lado del texto */
+  .btn i {
+    font-size: 20px; /* Tamaño del ícono */
+  }
+</style>
+
+<!-- Contenedor de servicios, inicialmente oculto -->
+<div id="productosContainer">
+  {% if productos %}
+
+    <div class="container-fluid box-shadow">
+      <div class="row">
+        {% for producto in productos %}
+          <div class="card col-sm-12 col-md-6 col-lg-3 col-xl-2 border-1 m-2 pt-3 pb-4 pt-2 mb-4 index_foto_fondo">
+            <a href="{% url 'ficha' producto.id %}" class="link-bloque">
+              <img src="/media/{{ producto.imagen }}" class="card-img-top index_prod_1 center-image" alt="Foto de un videojuego"/>
+              <h2 class="card-title titulos">{{ producto.nombre }}</h2>
+              <br>
+              <h5 class="card-title titulos">{{ producto.html_estado|safe }}</h5>
+              <span class="index_precio">{{ producto.html_precio|safe }}</span>
+              <br>
+              <span class="titulos_2">{{ producto.descripcion }}</span>
+              <br><br><br><br>
+              <p>
+                <a href="{% url 'ficha' producto.id %}" class="btn btn-primary index_btn_comprar">Ver más detalles</a>
+              </p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <h2 class="text-center titulos">No se encontraron productos</h2>
+  {% endif %}
+</div>
+
+<script>
+  // Obtener el botón y el contenedor de productos
+  const mostrarBtn = document.getElementById('mostrarBtn');
+  const productosContainer = document.getElementById('productosContainer');
+
+  // Agregar un evento de clic al botón
+  mostrarBtn.addEventListener('click', function() {
+    // Cambiar el estilo de display entre 'none' y 'block' con animación
+    if (productosContainer.style.display === 'none' || productosContainer.style.display === '') {
+      productosContainer.style.display = 'block';
+      setTimeout(() => {
+        productosContainer.style.opacity = 1;  // Hacer que el contenedor aparezca con animación
+      }, 10);
+      mostrarBtn.textContent = 'Ocultar Servicios';  // Cambiar el texto del botón
+    } else {
+      productosContainer.style.opacity = 0;  // Desaparecer el contenedor con animación
+      setTimeout(() => {
+        productosContainer.style.display = 'none';  // Ocultar después de la animación
+      }, 500);
+      mostrarBtn.textContent = 'Mostrar Servicios';  // Cambiar el texto del botón
+    }
+  });
+</script>
+
+
+
 
 <main role="main">
   <div class="container-fluid pt-2">
@@ -138,48 +303,7 @@
 
 
 
-<section class="container mt-5 text-center">
-  <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #333;">SERVICIOS</h2>
-  <hr style="width: 50px; margin: 0 auto; height: 3px; background-color: #007bff;">
-  
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-4">
-      <div class="card shadow-sm" style="border: none; border-radius: 25px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <div class="card-body text-center">
-          <img src="{% static 'core/img/especialidades.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px; border: 6px solid #007bff;" alt="Especialidades Médicas">
-          <h4 class="card-title" style="font-style: italic; color: #004080; font-size: 1.25rem;">Especialidades Médicas</h4>
-          <p class="card-text" style="font-style: italic; color: #555; font-size: 1rem;">
-            Contamos con especialistas en diversas áreas de la medicina para ofrecer un diagnóstico y tratamiento avanzados.
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="card shadow-sm" style="border: none; border-radius: 25px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <div class="card-body text-center">
-          <img src="{% static 'core/img/pediatria.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px; border: 6px solid #007bff;" alt="Pediatría">
-          <h4 class="card-title" style="font-style: italic; color: #004080; font-size: 1.25rem;">Pediatría</h4>
-          <p class="card-text" style="font-style: italic; color: #555; font-size: 1rem;">
-            Atendemos a los más pequeños de la casa con un equipo especializado en el bienestar infantil.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card shadow-sm" style="border: none; border-radius: 25px; background: #f0faff; transition: transform 0.3s ease; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <div class="card-body text-center">
-          <img src="{% static 'core/img/consulta_general.jpg' %}" class="rounded-circle mb-3" style="width: 150px; height: 150px; border: 6px solid #007bff;" alt="Consulta General">
-          <h4 class="card-title" style="font-style: italic; color: #004080; font-size: 1.25rem;">Consulta General</h4>
-          <p class="card-text" style="font-style: italic; color: #555; font-size: 1rem;">
-            Ofrecemos consultas generales para diagnosticar y tratar tus necesidades médicas con el mayor profesionalismo.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="container mt-5 text-center">
   <h2 class="mb-4" style="font-family: 'Roboto Slab', serif; font-weight: bold; color: #333;">TESTIMONIOS</h2>
@@ -257,33 +381,6 @@
 
 
 
-<br>
-{% if productos %}
-  <div class="container-fluid box-shadow">
-    <div class="row">
-      {% for producto in productos %}
-        <div class="card col-sm-12 col-md-6 col-lg-3 col-xl-2 border-1 m-2 pt-3 pb-4 pt-2 mb-4 index_foto_fondo" style="width: 21.2rem;">
-          <a href="{% url 'ficha' producto.id %}" class="link-bloque">
-            <img src="/media/{{ producto.imagen }}" class="card-img-top index_prod_1 center-image" alt="Foto de un videojuego"/>
-            <h2 class="card-title titulos" style="text-align: center;">{{ producto.nombre }}</h2>
-            <br>
-            <h5 class="card-title titulos">{{ producto.html_estado|safe }}</h5>
-            <span class="index_precio" style="color: rgb(167, 8, 153);">{{ producto.html_precio|safe }}</span>
-            <br>
-            <span class="titulos_2">{{ producto.descripcion }}</span>
-            <br>
-            <span class="index_precio" style="color: rgb(179, 145, 176);">{{ producto.html_stock }}</span>
-            <br><br><br>
-            <p>
-              <a href="{% url 'ficha' producto.id %}" class="btn btn-primary index_btn_comprar">Ver más detalles</a>
-            </p>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-{% else %}
-  <h2 class="text-center titulos">No se encontraron productos</h2>
-{% endif %}
+
 <br><br><br>
 {% endblock content %}

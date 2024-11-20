@@ -264,10 +264,10 @@ def poblar_bd(test_user_email=''):
         imagen='perfiles/smartinez.jpg')
     
     categorias_data = [
-        { 'id': 1, 'nombre': 'Shooter'},
-        { 'id': 2, 'nombre': 'Deportes'},
-        { 'id': 3, 'nombre': 'Puzzle'},
-        { 'id': 4, 'nombre': 'Simulación'},
+        {'id': 1, 'nombre': 'Consulta General'},
+        {'id': 2, 'nombre': 'Consulta Cardiológica'},
+        {'id': 3, 'nombre': 'Exámenes de Laboratorio'},
+        {'id': 4, 'nombre': 'Consulta Pediátrica'}
     ]
 
     print('Crear categorías')
@@ -276,211 +276,160 @@ def poblar_bd(test_user_email=''):
     print('Categorías creadas correctamente')
 
     productos_data = [
-        # Categoría "Shooter" (5 juegos)
-        {
-            'id': 1,
-            'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Halo Infinite',
-            'descripcion': 'Halo Infinite es un shooter en primera persona desarrollado por 343 Industries y publicado por Xbox Game Studios. Es la sexta entrega principal de la serie Halo y sigue al Jefe Maestro en su lucha contra la amenaza de los Banished en un mundo abierto.',
-            'precio': 59990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 20,
-            'imagen': 'productos/000001_kBvdw39.jpg'
-        },
-        {
-            'id': 2,
-            'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Overwatch 2',
-            'descripcion': 'Overwatch 2 es un juego de disparos en equipo desarrollado y publicado por Blizzard Entertainment. El juego introduce nuevas misiones de historia cooperativa y modos de juego, así como nuevos héroes y mapas.',
-            'precio': 49990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 15,
-            'imagen': 'productos/000002_zjg38GX.jpg'
-        },
-        {
-            'id': 3,
-            'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Rainbow Six Siege',
-            'descripcion': 'Tom Clancy\'s Rainbow Six Siege es un shooter táctico en primera persona desarrollado por Ubisoft Montreal y publicado por Ubisoft. Los jugadores controlan a los operadores de diferentes unidades antiterroristas en enfrentamientos multijugador.',
-            'precio': 39990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 10,
-            'imagen': 'productos/000003_DxwaCeS.jpg'
-        },
-        {
-            'id': 4,
-            'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Battlefield 2042',
-            'descripcion': 'Battlefield 2042 es un shooter en primera persona desarrollado por DICE y publicado por Electronic Arts. El juego está ambientado en un futuro cercano y presenta grandes batallas multijugador con hasta 128 jugadores en mapas dinámicos.',
-            'precio': 69990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 20,
-            'imagen': 'productos/000004_F3QX7Fc.jpg'
-        },
-        {
-            'id': 5,
-            'categoria': Categoria.objects.get(id=1),
-            'nombre': 'Valorant',
-            'descripcion': 'Valorant es un shooter táctico en primera persona desarrollado y publicado por Riot Games. El juego combina elementos de disparos y habilidades únicas para cada personaje, ofreciendo un estilo de juego estratégico y competitivo.',
-            'precio': 19990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 15,
-            'imagen': 'productos/000005_ApSAbeS.jpg'
-        },
-        # Categoría "Deportes" (5 juegos)
-        {
-            'id': 6,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'FIFA 23',
-            'descripcion': 'FIFA 23 es un videojuego de simulación de fútbol desarrollado y publicado por Electronic Arts. El juego presenta a los mejores equipos y jugadores de fútbol del mundo, ofreciendo modos de juego tanto en solitario como multijugador.',
-            'precio': 59990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 20,
-            'imagen': 'productos/000006_wbhH394.jpg'
-        },
-        {
-            'id': 7,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'NBA 2K23',
-            'descripcion': 'NBA 2K23 es un videojuego de simulación de baloncesto desarrollado por Visual Concepts y publicado por 2K Sports. El juego ofrece una experiencia realista de la NBA, con modos de juego variados y una gran fidelidad gráfica.',
-            'precio': 69990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 20,
-            'imagen': 'productos/000007_HugwH2Y.jpg'
-        },
-        {
-            'id': 8,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Madden NFL 23',
-            'descripcion': 'Madden NFL 23 es un videojuego de simulación de fútbol americano desarrollado y publicado por Electronic Arts. El juego ofrece una experiencia auténtica de la NFL, con gráficos mejorados y modos de juego variados.',
-            'precio': 49990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 15,
-            'imagen': 'productos/000008_WtJOBqZ.jpg'
-        },
-        {
-            'id': 9,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Tony Hawk\'s Pro Skater 1+2',
-            'descripcion': 'Tony Hawk\'s Pro Skater 1+2 es un videojuego de skateboarding desarrollado por Vicarious Visions y publicado por Activision. El juego es una remasterización de los dos primeros juegos de la serie Tony Hawk\'s Pro Skater, ofreciendo gráficos mejorados y una jugabilidad clásica.',
-            'precio': 39990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 10,
-            'imagen': 'productos/000009_tL7J5cP.jpg'
-        },
-        {
-            'id': 10,
-            'categoria': Categoria.objects.get(id=2),
-            'nombre': 'Gran Turismo 7',
-            'descripcion': 'Gran Turismo 7 es un videojuego de carreras desarrollado por Polyphony Digital y publicado por Sony Interactive Entertainment. El juego ofrece una experiencia de conducción realista, con una gran variedad de coches y circuitos.',
-            'precio': 69990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 20,
-            'imagen': 'productos/000010_qB7Kyt0.jpg'
-        },
-        # Categoría "Puzzle" (5 juegos)
-        {
-            'id': 11,
-            'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Tetris Effect',
-            'descripcion': 'Tetris Effect es un videojuego de rompecabezas desarrollado por Monstars y Resonair y publicado por Enhance Games. El juego ofrece una experiencia inmersiva de Tetris, con efectos visuales y sonoros sincronizados con la jugabilidad.',
-            'precio': 29990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 15,
-            'imagen': 'productos/000011_V3pdxE4.jpg'
-        },
-        {
-            'id': 12,
-            'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Portal 2',
-            'descripcion': 'Portal 2 es un videojuego de rompecabezas en primera persona desarrollado y publicado por Valve Corporation. El juego sigue a Chell mientras usa el Portal Gun para resolver una serie de rompecabezas y escapar de las instalaciones de Aperture Science.',
-            'precio': 19990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 10,
-            'imagen': 'productos/000012_aD8XQ9t.jpg'
-        },
-        {
-            'id': 13,
-            'categoria': Categoria.objects.get(id=3),
-            'nombre': 'The Witness',
-            'descripcion': 'The Witness es un videojuego de rompecabezas en primera persona desarrollado y publicado por Jonathan Blow. El juego presenta un mundo abierto lleno de rompecabezas desafiantes que los jugadores deben resolver para descubrir la historia subyacente.',
-            'precio': 39990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 15,
-            'imagen': 'productos/000013_KZxVxa1.jpg'
-        },
-        {
-            'id': 14,
-            'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Baba Is You',
-            'descripcion': 'Baba Is You es un videojuego de rompecabezas desarrollado por Hempuli. El juego permite a los jugadores cambiar las reglas del juego moviendo palabras en el entorno, creando nuevas interacciones y soluciones para los rompecabezas.',
-            'precio': 19990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 10,
-            'imagen': 'productos/000014_cOze7oQ.jpg'
-        },
-        {
-            'id': 15,
-            'categoria': Categoria.objects.get(id=3),
-            'nombre': 'Human: Fall Flat',
-            'descripcion': 'Human: Fall Flat es un videojuego de rompecabezas y plataformas desarrollado por No Brakes Games y publicado por Curve Digital. El juego presenta un personaje llamado Bob, que los jugadores deben controlar para resolver rompecabezas físicos en una serie de niveles.',
-            'precio': 29990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 15,
-            'imagen': 'productos/000015_vmLUsiW.jpg'
-        },
-        # Categoría "Simulación" (5 juegos)
-        {
-            'id': 16,
-            'categoria': Categoria.objects.get(id=4),
-            'nombre': 'The Sims 4',
-            'descripcion': 'The Sims 4 es un videojuego de simulación de vida desarrollado por Maxis y publicado por Electronic Arts. Los jugadores pueden crear y controlar personas en un mundo virtual, construyendo casas y desarrollando relaciones.',
-            'precio': 39990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 20,
-            'imagen': 'productos/000016_Xn6EHti.jpg'
-        },
-        {
-            'id': 17,
-            'categoria': Categoria.objects.get(id=4),
-            'nombre': 'Flight Simulator',
-            'descripcion': 'Microsoft Flight Simulator es un videojuego de simulación de vuelo desarrollado por Asobo Studio y publicado por Xbox Game Studios. El juego ofrece una simulación realista de vuelo, con gráficos de alta calidad y una recreación detallada del mundo.',
-            'precio': 99990,
-            'descuento_subscriptor': 15,
-            'descuento_oferta': 25,
-            'imagen': 'productos/000017_VgAJneE.jpg'
-        },
-        {
-            'id': 18,
-            'categoria': Categoria.objects.get(id=4),
-            'nombre': 'Cities: Skylines',
-            'descripcion': 'Cities: Skylines es un videojuego de simulación de construcción de ciudades desarrollado por Colossal Order y publicado por Paradox Interactive. Los jugadores pueden planificar y construir una ciudad, gestionando aspectos como la infraestructura, los servicios y la economía.',
-            'precio': 29990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 15,
-            'imagen': 'productos/000018_F5CUjiM.jpg'
-        },
-        {
-            'id': 19,
-            'categoria': Categoria.objects.get(id=4),
-            'nombre': 'Stardew Valley',
-            'descripcion': 'Stardew Valley es un videojuego de simulación de granja desarrollado por ConcernedApe. Los jugadores pueden cultivar, criar animales, pescar, minar y socializar con los habitantes del pueblo.',
-            'precio': 19990,
-            'descuento_subscriptor': 5,
-            'descuento_oferta': 10,
-            'imagen': 'productos/000019_6OuR7ee.jpg'
-        },
-        {
-            'id': 20,
-            'categoria': Categoria.objects.get(id=4),
-            'nombre': 'Planet Zoo',
-            'descripcion': 'Planet Zoo es un videojuego de simulación de construcción de zoológicos desarrollado y publicado por Frontier Developments. Los jugadores pueden construir y gestionar un zoológico, cuidando a los animales y creando hábitats realistas.',
-            'precio': 49990,
-            'descuento_subscriptor': 10,
-            'descuento_oferta': 20,
-            'imagen': 'productos/000020_9SLe8r4.jpg'
-        }
-    ]
+    # Categoría "Consultas Médicas" (5 productos)
+    {
+        'id': 1,
+        'categoria': Categoria.objects.get(id=1),  # Consulta Pediatría
+        'nombre': 'Consulta Pediátrica',
+        'descripcion': 'Consulta médica especializada para niños, donde se evalúa el desarrollo físico y emocional, se realizan exámenes básicos y se brindan recomendaciones de salud.',
+        'precio': 39990,
+        'descuento_subscriptor': 10,
+        'descuento_oferta': 15,
+        'imagen': 'productos/consulta_pediatria.jpg'
+    },
+    {
+        'id': 2,
+        'categoria': Categoria.objects.get(id=1),  # Consulta Ginecológica
+        'nombre': 'Consulta Ginecológica',
+        'descripcion': 'Examen ginecológico completo, incluyendo revisión de salud reproductiva y diagnóstico preventivo de enfermedades ginecológicas.',
+        'precio': 49990,
+        'descuento_subscriptor': 10,
+        'descuento_oferta': 20,
+        'imagen': 'productos/consulta_ginecologica.jpg'
+    },
+    {
+        'id': 3,
+        'categoria': Categoria.objects.get(id=1),  # Consulta Cardiología
+        'nombre': 'Consulta Cardiológica',
+        'descripcion': 'Evaluación del sistema cardiovascular, incluye chequeo del corazón y recomendaciones para mantener una vida saludable.',
+        'precio': 69990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/consulta_cardiologia.jpg'
+    },
+    {
+        'id': 4,
+        'categoria': Categoria.objects.get(id=1),  # Consulta Oftalmológica
+        'nombre': 'Consulta Oftalmológica',
+        'descripcion': 'Revisión completa de la vista, detección de problemas oculares y prescripción de lentes si es necesario.',
+        'precio': 49990,
+        'descuento_subscriptor': 10,
+        'descuento_oferta': 15,
+        'imagen': 'productos/consulta_oftalmologica.jpg'
+    },
+    {
+        'id': 5,
+        'categoria': Categoria.objects.get(id=1),  # Consulta Medicina General
+        'nombre': 'Consulta Medicina General',
+        'descripcion': 'Examen físico general, diagnóstico de enfermedades comunes y consejos de prevención de salud.',
+        'precio': 29990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/consulta_medico_general.jpg'
+    },
+    # Categoría "Servicios de Salud" (5 productos)
+    {
+        'id': 6,
+        'categoria': Categoria.objects.get(id=2),  # Examen de Laboratorio
+        'nombre': 'Examen de Laboratorio',
+        'descripcion': 'Exámenes médicos de laboratorio para análisis de sangre, orina y otros parámetros para detectar posibles enfermedades.',
+        'precio': 19990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/examen_laboratorio.jpg'
+    },
+    {
+        'id': 7,
+        'categoria': Categoria.objects.get(id=2),  # Radiografía
+        'nombre': 'Radiografía',
+        'descripcion': 'Estudio radiológico para diagnóstico de fracturas, enfermedades óseas o problemas pulmonares.',
+        'precio': 24990,
+        'descuento_subscriptor': 10,
+        'descuento_oferta': 15,
+        'imagen': 'productos/radiografia.jpg'
+    },
+    {
+        'id': 8,
+        'categoria': Categoria.objects.get(id=2),  # Ecografía
+        'nombre': 'Ecografía',
+        'descripcion': 'Examen no invasivo que utiliza ondas sonoras para examinar órganos internos, como el abdomen, los riñones, y el embarazo.',
+        'precio': 39990,
+        'descuento_subscriptor': 10,
+        'descuento_oferta': 20,
+        'imagen': 'productos/ecografia.jpg'
+    },
+    {
+        'id': 9,
+        'categoria': Categoria.objects.get(id=2),  # Electrocardiograma
+        'nombre': 'Electrocardiograma (ECG)',
+        'descripcion': 'Prueba diagnóstica para medir la actividad eléctrica del corazón, ayudando a detectar arritmias y otros problemas cardíacos.',
+        'precio': 29990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/electrocardiograma.jpg'
+    },
+    {
+        'id': 10,
+        'categoria': Categoria.objects.get(id=2),  # Terapia Física
+        'nombre': 'Sesión de Terapia Física',
+        'descripcion': 'Tratamientos de rehabilitación para aliviar dolor muscular, mejorar la movilidad y restaurar la funcionalidad física.',
+        'precio': 39990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/terapia_fisica.jpg'
+    },
+    # Categoría "Bienestar y Cuidado Personal" (5 productos)
+    {
+        'id': 11,
+        'categoria': Categoria.objects.get(id=3),  # Suplemento Vitaminico
+        'nombre': 'Suplemento Multivitamínico',
+        'descripcion': 'Suplemento nutricional que proporciona vitaminas y minerales esenciales para fortalecer el sistema inmune y mejorar la salud general.',
+        'precio': 15990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/suplemento_multivitaminico.jpg'
+    },
+    {
+        'id': 12,
+        'categoria': Categoria.objects.get(id=3),  # Aceite Esencial
+        'nombre': 'Aceite Esencial de Lavanda',
+        'descripcion': 'Aceite esencial utilizado para reducir el estrés, mejorar el sueño y aliviar dolores musculares mediante aromaterapia.',
+        'precio': 29990,
+        'descuento_subscriptor': 10,
+        'descuento_oferta': 15,
+        'imagen': 'productos/aceite_esencial_lavanda.jpg'
+    },
+    {
+        'id': 13,
+        'categoria': Categoria.objects.get(id=3),  # Masaje Terapéutico
+        'nombre': 'Sesión de Masaje Terapéutico',
+        'descripcion': 'Masaje especializado para aliviar tensiones musculares, mejorar la circulación y reducir el estrés.',
+        'precio': 49990,
+        'descuento_subscriptor': 10,
+        'descuento_oferta': 20,
+        'imagen': 'productos/masaje_terapeutico.jpg'
+    },
+    {
+        'id': 14,
+        'categoria': Categoria.objects.get(id=3),  # Tratamiento Facial
+        'nombre': 'Tratamiento Facial Antiedad',
+        'descripcion': 'Tratamiento estético facial para prevenir el envejecimiento, hidratar la piel y mejorar la apariencia del rostro.',
+        'precio': 69990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 15,
+        'imagen': 'productos/tratamiento_facial.jpg'
+    },
+    {
+        'id': 15,
+        'categoria': Categoria.objects.get(id=3),  # Terapia Psicológica
+        'nombre': 'Sesión de Terapia Psicológica',
+        'descripcion': 'Consulta psicológica con un profesional para tratar temas de ansiedad, depresión, estrés y otros trastornos emocionales.',
+        'precio': 79990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/terapia_psicologica.jpg'
+    },
+]
 
     print('Crear productos')
     for producto in productos_data:
@@ -529,10 +478,10 @@ def poblar_bd(test_user_email=''):
             if estado == 'Anulado':
                 fecha_despacho = None
                 fecha_entrega = None
-            elif estado == 'Vendido':
+            elif estado == 'En espera':
                 fecha_despacho = None
                 fecha_entrega = None
-            elif estado == 'Despachado':
+            elif estado == 'Atendido':
                 fecha_entrega = None
             boleta = Boleta.objects.create(
                 nro_boleta=nro_boleta, 
@@ -589,4 +538,6 @@ def poblar_bd(test_user_email=''):
             Bodega.objects.create(producto=producto)
         print(f'    Agregados {cantidad} "{producto.nombre}" a la bodega')
     print('Productos agregados a bodega')
+
+    
 
