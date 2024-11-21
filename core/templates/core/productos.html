@@ -3,7 +3,7 @@
 {% load custom_filters %}
 
 {% block content %}
-  <h1 class="text-center titulos" style="margin: 25px;">Mantenedor de productos</h1>
+  <h1 class="text-center titulos" style="margin: 25px; color: #007bff;">Mantenedor de productos</h1>
   <br><br>
   <form id="form" method="POST" enctype="multipart/form-data">
 
@@ -18,9 +18,8 @@
   
       <div class="col-sm-12 col-md-4"> 
           {{ form.precio|as_bootstrap_field }} <br> <br>
-          <fieldset class="border border-4 p-2">
-              <legend style="color: #ef89a1; font-weight: bold;">PORCENTAJES DE DESCUENTO</legend>
-              <br><br><br><br>
+          <fieldset class="border border-4 p-2" style="border-color: #007bff;">
+              <legend style="color: #007bff; font-weight: bold;">PORCENTAJES DE DESCUENTO</legend>
               {{ form.descuento_subscriptor|as_bootstrap_field }}  
               {{ form.descuento_oferta|as_bootstrap_field }}  
           </fieldset>
@@ -28,9 +27,9 @@
   
       <div class="col-sm-12 col-md-3">
           {% if form.imagen.value %}
-              <img id="cuadro-imagen" src="/media/{{ form.imagen.value }}">
+              <img id="cuadro-imagen" src="/media/{{ form.imagen.value }}" alt="Imagen del producto" class="img-fluid border" style="border-color: #007bff;">
           {% else %}
-              <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}">
+              <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}" alt="Sin imagen disponible" class="img-fluid border" style="border-color: #007bff;">
           {% endif %}
           
           {{ form.imagen|as_bootstrap_field }}
@@ -46,31 +45,24 @@
     <br><br>
     <!-- AREA DE BOTONES -->
     <div class="mt-2 mb-3 text-center">
+      <div class="btn-group">
+          <input class="btn btn-primary boton_buscar_anonimo_2" style="background-color: #007bff; border-color: #007bff;" type="submit" value="Guardar">
 
-      <input class="btn btn-primary boton_buscar_anonimo_2" type="submit" value="Guardar">
+          <a class="btn btn-primary boton_buscar_anonimo_2" style="background-color: #007bff; border-color: #007bff;" href="{% url 'productos' 'crear' '0' %}"> Nuevo </a>
 
-      <a class="btn btn-primary boton_buscar_anonimo_2" href="{% url 'productos' 'crear' '0' %}"> Nuevo </a>
+          <a class="btn btn-primary boton_buscar_anonimo_2" style="background-color: #007bff; border-color: #007bff;" onclick="event.preventDefault(); document.getElementById('id_imagen').click();"> Seleccionar imagen </a>  
 
-      <!-- AREA DE BOTON DE SELECCIONAR IMAGEN: Reemplaza el botón "Seleccionar archivo" por otro con Bootstrap (VER COMENTARIO "BOTON IMAGEN" en script.js) -->
-      <a class="btn btn-primary boton_buscar_anonimo_2" onclick="event.preventDefault(); document.getElementById('id_imagen').click();"> Seleccionar imagen </a>  
-
-      {% if form.instance.id %}
-        <a class="btn btn-primary" style="background-color: #e63950; color: #ffffff;"  href="{% url 'productos' 'eliminar' form.instance.id %}"> Eliminar </a>
-      {% endif %}
-
+          {% if form.instance.id %}
+            <a class="btn btn-primary" style="background-color: #dc3545; color: #ffffff;" href="{% url 'productos' 'eliminar' form.instance.id %}"> Eliminar </a>
+          {% endif %}
+      </div>
     </div>
-
   </form>
   <br>
-  {% comment %} 
-  
-  {% if productos %} 
-  
-  {% endcomment %}
 
-    <table id="tabla-principal" class="table table-hover">
+    <table id="tabla-principal" class="table table-hover" style="background-color: #ffffff;">
         <thead>
-            <tr class="tabla_carrito">
+            <tr class="tabla_carrito" style="background-color: #007bff; color: #ffffff;">
                 <th> ID </th>
                 <th> Categoría </th>
                 <th> Nombre </th>
@@ -85,39 +77,33 @@
         </thead>
         <tbody class="tabla_carrito">
             {% for producto in productos %}
-                
-            <td style="background-color:#cb6e84;"> {{producto.id}}</td>
-            <td style="background-color:#cb6e84;">{{producto.categoria}}</td>
-            <td style="background-color:#cb6e84;">{{producto.nombre}}</td>
-            <td style="background-color:#cb6e84;"> {{producto.descripcion}}</td>
-            <td style="background-color:#cb6e84;">{{producto.precio|formatear_dinero}}</td>
-            <td style="background-color:#cb6e84;">{{producto.descuento_subscriptor|formatear_porcentaje}}</td>
-            <td style="background-color:#cb6e84;">{{producto.descuento_oferta|formatear_porcentaje}}</td>
-              <td style="background-color:#cb6e84;">
-                  <img src="/media/{{ producto.imagen }}" class="producto-sm" alt="">
+            <tr>
+              <td>{{ producto.id }}</td>
+              <td>{{ producto.categoria }}</td>
+              <td>{{ producto.nombre }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>{{ producto.precio|formatear_dinero }}</td>
+              <td>{{ producto.descuento_subscriptor|formatear_porcentaje }}</td>
+              <td>{{ producto.descuento_oferta|formatear_porcentaje }}</td>
+              <td>
+                  <img src="/media/{{ producto.imagen }}" class="producto-sm" alt="Imagen del producto">
               </td>
-              <td style="background-color:#cb6e84;">
-                  <a href="{% url 'productos' 'actualizar' producto.id %}" class="btn btn-primary btn-sm boton_buscar_anonimo_2"> Editar </a>
+              <td>
+                  <a href="{% url 'productos' 'actualizar' producto.id %}" class="btn btn-primary btn-sm" style="background-color: #007bff; border-color: #007bff;">Editar</a>
               </td>
-              <td style="background-color:#cb6e84;">
+              <td>
                   <form method="delete">
-                      <a href="{% url 'productos' 'eliminar' producto.id %}" class="btn btn-danger btn-sm"> Eliminar </a>
+                      <a href="{% url 'productos' 'eliminar' producto.id %}" class="btn btn-danger btn-sm">Eliminar</a>
                   </form>
               </td>
-                </tr>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
     <br><br><br>
-
-  {% comment %}     
-  
-  {% endif %}
-  
-  {% endcomment %} 
-
 {% endblock content %}
 
 {% block script %}
   <script src="{% static 'core/js/productos.js' %}"></script>
 {% endblock script %}
+

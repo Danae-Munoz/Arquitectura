@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, registro, nosotros, productos, administracion, ropa
+from .views import index, registro, nosotros, productos, administracion, reserva_hora, ropa, ver_citas
 from .views import usuarios, bodega, ventas, boleta, ingresar, usuarios
 from .views import misdatos, miscompras, salir, carrito, ficha
 from .views import cambiar_estado_boleta, poblar, obtener_productos, eliminar_producto_en_bodega
@@ -36,5 +36,7 @@ urlpatterns = [
     path('poblar', poblar, name='poblar'),
     path('administracion', administracion, name='administracion'),
     path('ropa', ropa, name='ropa'),
+    path('reserva_hora', reserva_hora, name='reserva_hora'),
+    path('ver_citas/', ver_citas, name='ver_citas'),
     
 ]

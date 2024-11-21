@@ -75,6 +75,12 @@ def ficha(request, producto_id):
 def nosotros(request):
     # CREAR: renderización de página
     return render(request, 'core/nosotros.html')
+def reserva_hora(request):
+    # CREAR: renderización de página
+    return render(request, 'core/reserva_hora.html')
+def ver_citas(request):
+    # CREAR: renderización de página
+    return render(request, 'core/ver_citas.html')
 
 def premio(request):
     return render(request, 'core/premio.html')
@@ -510,6 +516,7 @@ def calcular_precios_producto(producto):
     return precio_normal, precio_oferta, precio_subscr, hay_desc_oferta, hay_desc_subscr
 
 # VISTAS y FUNCIONES DE COMPRAS
+
 
 def comprar_ahora(request):
     messages.error(request, f'El pago aún no ha sido implementado.')
