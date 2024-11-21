@@ -62,6 +62,8 @@ class Perfil(models.Model):
         ('Cliente', 'Cliente'),
         ('Administrador', 'Administrador'),
         ('Medico', 'Medico'),
+        ('Secretario', 'Secretario'),
+        ('Cajero', 'Cajero'),
         ('Superusuario', 'Superusuario'),
     ]
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
