@@ -36,7 +36,10 @@ class Migration(migrations.Migration):
                 ('fecha_venta', models.DateField(verbose_name='Fecha de venta')),
                 ('fecha_despacho', models.DateField(blank=True, null=True, verbose_name='Fecha de despacho')),
                 ('fecha_entrega', models.DateField(blank=True, null=True, verbose_name='Fecha de entrega')),
-                ('estado', models.CharField(choices=[('Anulado', 'Anulado'), ('Vendido', 'Vendido'), ('Despachado', 'Despachado'), ('Entregado', 'Entregado')], max_length=50, verbose_name='Estado')),
+                ('estado', models.CharField(choices=[('Anulado', 'Anulado'),
+        ('En espera', 'En espera'),
+        ('Atendido', 'Atendido'),
+        ('Atendido flash', 'Atendido flash'),], max_length=50, verbose_name='Estado')),
             ],
             options={
                 'verbose_name': 'Boleta',

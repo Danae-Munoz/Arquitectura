@@ -369,66 +369,66 @@ def poblar_bd(test_user_email=''):
         'imagen': 'productos/electrocardiograma.jpg'
     },
     {
-        'id': 10,
-        'categoria': Categoria.objects.get(id=2),  # Terapia Física
-        'nombre': 'Sesión de Terapia Física',
-        'descripcion': 'Tratamientos de rehabilitación para aliviar dolor muscular, mejorar la movilidad y restaurar la funcionalidad física.',
-        'precio': 39990,
-        'descuento_subscriptor': 5,
-        'descuento_oferta': 10,
-        'imagen': 'productos/terapia_fisica.jpg'
+    'id': 10,
+    'categoria': Categoria.objects.get(id=2),  # Examen de Pulmones
+    'nombre': 'Examen de Función Pulmonar',
+    'descripcion': 'Examen para evaluar la capacidad respiratoria y detectar problemas pulmonares como el asma o la EPOC.',
+    'precio': 34990,
+    'descuento_subscriptor': 10,
+    'descuento_oferta': 15,
+    'imagen': 'productos/examen_funcion_pulmonar.jpg'
     },
-    # Categoría "Bienestar y Cuidado Personal" (5 productos)
     {
         'id': 11,
-        'categoria': Categoria.objects.get(id=3),  # Suplemento Vitaminico
-        'nombre': 'Suplemento Multivitamínico',
-        'descripcion': 'Suplemento nutricional que proporciona vitaminas y minerales esenciales para fortalecer el sistema inmune y mejorar la salud general.',
-        'precio': 15990,
-        'descuento_subscriptor': 5,
-        'descuento_oferta': 10,
-        'imagen': 'productos/suplemento_multivitaminico.jpg'
+        'categoria': Categoria.objects.get(id=2),  # Consulta Endocrinológica
+        'nombre': 'Consulta Endocrinológica',
+        'descripcion': 'Consulta especializada para diagnosticar y tratar trastornos hormonales y metabólicos, como diabetes y tiroides.',
+        'precio': 58990,
+        'descuento_subscriptor': 8,
+        'descuento_oferta': 12,
+        'imagen': 'productos/consulta_endocrinologica.jpg'
     },
     {
         'id': 12,
-        'categoria': Categoria.objects.get(id=3),  # Aceite Esencial
-        'nombre': 'Aceite Esencial de Lavanda',
-        'descripcion': 'Aceite esencial utilizado para reducir el estrés, mejorar el sueño y aliviar dolores musculares mediante aromaterapia.',
-        'precio': 29990,
-        'descuento_subscriptor': 10,
-        'descuento_oferta': 15,
-        'imagen': 'productos/aceite_esencial_lavanda.jpg'
-    },
-    {
-        'id': 13,
-        'categoria': Categoria.objects.get(id=3),  # Masaje Terapéutico
-        'nombre': 'Sesión de Masaje Terapéutico',
-        'descripcion': 'Masaje especializado para aliviar tensiones musculares, mejorar la circulación y reducir el estrés.',
-        'precio': 49990,
-        'descuento_subscriptor': 10,
-        'descuento_oferta': 20,
-        'imagen': 'productos/masaje_terapeutico.jpg'
-    },
-    {
-        'id': 14,
-        'categoria': Categoria.objects.get(id=3),  # Tratamiento Facial
-        'nombre': 'Tratamiento Facial Antiedad',
-        'descripcion': 'Tratamiento estético facial para prevenir el envejecimiento, hidratar la piel y mejorar la apariencia del rostro.',
-        'precio': 69990,
-        'descuento_subscriptor': 5,
-        'descuento_oferta': 15,
-        'imagen': 'productos/tratamiento_facial.jpg'
-    },
-    {
-        'id': 15,
-        'categoria': Categoria.objects.get(id=3),  # Terapia Psicológica
-        'nombre': 'Sesión de Terapia Psicológica',
-        'descripcion': 'Consulta psicológica con un profesional para tratar temas de ansiedad, depresión, estrés y otros trastornos emocionales.',
+        'categoria': Categoria.objects.get(id=2),  # Examen de Colonoscopia
+        'nombre': 'Examen de Colonoscopia',
+        'descripcion': 'Examen médico para explorar el interior del colon y detectar enfermedades como el cáncer colorectal o pólipos.',
         'precio': 79990,
         'descuento_subscriptor': 5,
         'descuento_oferta': 10,
-        'imagen': 'productos/terapia_psicologica.jpg'
+        'imagen': 'productos/colonoscopia.jpg'
     },
+    {
+        'id': 13,
+        'categoria': Categoria.objects.get(id=2),  # Consulta Nutricional
+        'nombre': 'Consulta Nutricional',
+        'descripcion': 'Evaluación nutricional para crear planes alimenticios personalizados y tratar trastornos como obesidad o desnutrición.',
+        'precio': 34990,
+        'descuento_subscriptor': 7,
+        'descuento_oferta': 10,
+        'imagen': 'productos/consulta_nutricional.jpg'
+    },
+    {
+        'id': 14,
+        'categoria': Categoria.objects.get(id=2),  # Examen de Densitometría Ósea
+        'nombre': 'Examen de Densitometría Ósea',
+        'descripcion': 'Examen para medir la densidad mineral ósea y detectar riesgos de osteoporosis u otras enfermedades óseas.',
+        'precio': 49990,
+        'descuento_subscriptor': 5,
+        'descuento_oferta': 10,
+        'imagen': 'productos/densitometria_osea.jpg'
+    },
+    {
+        'id': 15,
+        'categoria': Categoria.objects.get(id=2),  # Consulta Neurológica
+        'nombre': 'Consulta Neurológica',
+        'descripcion': 'Consulta especializada en el diagnóstico y tratamiento de trastornos del sistema nervioso, como migrañas y epilepsia.',
+        'precio': 64990,
+        'descuento_subscriptor': 8,
+        'descuento_oferta': 12,
+        'imagen': 'productos/consulta_neurologica.jpg'
+    }
+   
 ]
 
     print('Crear productos')

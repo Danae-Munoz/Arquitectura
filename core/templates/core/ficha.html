@@ -5,8 +5,6 @@
 {% block content %}
 <br>
     <!-- Contenido principal de la pagina -->
-    <h1 class="text-center titulos" style="margin-left: 150px; text-align: center;">Ficha del producto</h1>
-    <br>
     <form method="post" id="formulario-ficha">
         {% csrf_token %}
         <div class="card mb-3 body mx-auto pt-2 index_foto_fondo" style="max-width: 1200px;">
@@ -21,12 +19,12 @@
                   <div class="card-body">
                     <div class="descripcion_ficha index_stock titulos" style="font-size: 30px;">
                         {{ html_estado|safe }}
-                      </div>
+                    </div>
                     <!--nombre-->
                       <span class="titulo_producto_ficha titulos_2">{{ nombre }}</span>
                     <!--precio-->
                         <div > <span class="precio_oferta_subscrito index_precio" style="color: rgb(167, 8, 153);">{{ html_precio|safe }}</span></div>
-                      </div>
+                    </div>
                     <!--descripcion-->
                       <div class="letra_blanca" style="font-size: 20px; margin-left: 20px;">
                           <span class="descripcion_ficha titulos_2">
@@ -44,23 +42,56 @@
           </div>
         </div>
     
-        <div class="d-flex justify-content-end" style="margin-right: 140px;">
-            <input type="hidden" id="accion">
-            <div class="btn-group">
-            <a href="{% url 'comprar_ahora' %}" class="btn btn-primary index_btn_comprar" style="right: 10px ;"> 
-                Comprar ahora 
-            </a>
-            <a href="{% url 'agregar_producto_al_carrito' id %}" class="btn btn-primary index_btn_comprar"> 
-                Agregar al carrito 
-            </a>
-          </div>
-        </div>
+        
     </form>
-    <br><br><br><br>
+  
 
+    <!-- Información del médico -->
+    <div class="medico-info" style="max-width: 1200px; margin: 0 auto; margin-top: 40px; text-align: center;">
+        <h3 class="titulos" style="font-size: 32px; margin-bottom: 20px;">Médico que dará el servicio</h3>
+        <div class="card" style="margin-bottom: 40px;">
+            <div class="row g-0">
+                <!-- Foto del médico -->
+                <div class="col-md-4 p-4">
+                    <img src="https://via.placeholder.com/150" class="img-fluid rounded-start" alt="Imagen del médico">
+                </div>
+                <!-- Descripción del médico y calificación -->
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-size: 28px; font-weight: bold;">Dr. Juan Pérez</h5>
+                        <p class="card-text" style="font-size: 18px; color: #666;">
+                            El Dr. Juan Pérez es un médico especialista en medicina general con más de 10 años de experiencia. 
+                            Se destaca por su trato cercano y profesionalismo, brindando atención personalizada y de alta calidad a todos sus pacientes.
+                        </p>
+                        <!-- Calificación -->
+                        <div class="calificacion" style="font-size: 24px; color: #FFD700;">
+                            <!-- Estrellas llenas según la calificación -->
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star-half" aria-hidden="true"></i>
+                            <!-- Aquí, si la calificación fuera diferente, se cambiarían algunas estrellas a fa-star-o (vacías) -->
+                        </div>
+                        <p style="margin-top: 10px; font-size: 16px; color: #777;">Calificación: 4.5/5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end" style="margin-right: 140px;">
+      <input type="hidden" id="accion">
+      <div class="btn-group">
+      <a href="{% url 'agregar_producto_al_carrito' id %}" class="btn btn-primary index_btn_comprar"> 
+          Agregar al carrito 
+      </a>
+    </div>
+  </div>
 
 {% endblock content %}
 
 {% block script %}
     <script src="{% static 'core/js/ficha.js' %}"></script>
 {% endblock script %}
+

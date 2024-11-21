@@ -137,9 +137,9 @@ class Carrito(models.Model):
 class Boleta(models.Model):
     ESTADO_CHOICES = [
         ('Anulado', 'Anulado'),
-        ('Vendido', 'Vendido'),
-        ('Despachado', 'Despachado'),
-        ('Entregado', 'Entregado'),
+        ('En espera', 'En espera'),
+        ('Atendido', 'Atendido'),
+        ('Atendido', 'Atendido'),
     ]
     nro_boleta = models.IntegerField(primary_key=True, blank=False, null=False, verbose_name='Nro boleta')
     cliente = models.ForeignKey(Perfil, on_delete=models.DO_NOTHING)

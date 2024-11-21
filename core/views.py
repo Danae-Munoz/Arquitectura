@@ -425,25 +425,25 @@ def cambiar_estado_boleta(request, nro_boleta, estado):
         boleta.fecha_venta = date.today()
         boleta.fecha_despacho = None
         boleta.fecha_entrega = None
-    elif estado == 'Vendido':
+    elif estado == 'En espera':
         # Devolver la boleta al estado recien vendida al dia de hoy, y sin despacho ni entrega
         boleta.fecha_venta = date.today()
         boleta.fecha_despacho = None
         boleta.fecha_entrega = None
-    elif estado == 'Despachado':
+    elif estado == 'Atendido':
         # Cambiar boleta a estado despachado, se conserva la fecha de venta y se limpia la fecha de entrega
         boleta.fecha_despacho = date.today()
         boleta.fecha_entrega = None
-    elif estado == 'Entregado':
+    elif estado == 'Atendido flash':
         # Cambiar boleta a estado entregado, pero hay que ver que estado actual tiene la boleta
-        if boleta.estado == 'Vendido':
+        if boleta.estado == 'En espera':
             # La boleta esta emitida, pero sin despacho ni entrega, entonces despachamos y entregamos hoy
             boleta.fecha_despacho = date.today()
             boleta.fecha_entrega = date.today()
-        elif boleta.estado == 'Despachado':
+        elif boleta.estado == 'Atendido':
             # La boleta esta despachada, entonces entregamos hoy
             boleta.fecha_entrega = date.today()
-        elif boleta.estado == 'Entregado':
+        elif boleta.estado == 'Atendido flash':
             # La boleta esta entregada, pero si se trata de un error entonces entregamos hoy
             boleta.fecha_entrega = date.today()
     boleta.estado = estado

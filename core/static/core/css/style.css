@@ -1,467 +1,302 @@
 th {
-  vertical-align: top;
-  background-color: #ef89a1 !important;
+  vertical-align: top !important;
+  background-color: #A8DADC !important; /* Azul celeste */
 }
 
 input, textarea, select {
-  background-image: linear-gradient(to right, #e7c2c2, #e7c2c2);
-    box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-    border-color: rgba(255, 105, 180, 0.5);
-    color: #FFFFFF;
+  background-image: linear-gradient(to right, #B2DFDB, #B2DFDB) !important; /* Celeste claro */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #23547c !important; /* Azul oscuro */
 }
-
-
-input, textarea, select {
-  background-image: linear-gradient(to right, #e7c2c2, #e7c2c2);
-    box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-    border-color: rgba(255, 105, 180, 0.5);
-    color: #FFFFFF;
-}
-
 
 body {
-  /* Fondo negro */
-  background-color: #FFFFFF;
-  /* Color de texto blanco */
-  color: #FFFFFF;
+  background-color: #FFFFFF !important; /* Blanco */
+  color: #2a9df4 !important; /* Azul */
 }
 
-
-.logo_pequeno{
-  width: 40px;
-  margin-right: 10px;
+.logo_pequeno {
+  width: 40px !important;
+  margin-right: 10px !important;
 }
 
-/*NAVEGADOR ANONIMO*/
 .nav_anonimo {
-  background-image: linear-gradient(to right, white );
-  box-shadow: 0 2px 4px #ADD8E6;
-  border-bottom: 1px solid #ADD8E6;
-  color: #FFFFFF;
+  background-image: linear-gradient(to right, #FFFFFF, #A8DADC) !important; /* Blanco y celeste */
+  box-shadow: 0 2px 4px #ADD8E6 !important;
+  border-bottom: 1px solid #ADD8E6 !important;
+  color: #2a9df4 !important; /* Azul */
 }
 
 .boton_buscar_anonimo {
-  background-image: linear-gradient(to right, #e7c2c2, #e7c2c2);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #FFFFFF;
+  background-image: linear-gradient(to right, #B2DFDB, #B2DFDB) !important; /* Celeste claro */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #23547c !important; /* Azul oscuro */
 }
 
-.boton_buscar_anonimo_2{
-  background-image: linear-gradient(to right, #23547c, ##6ec1e4);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #000000;
-  text-align: center;
-  
+.boton_buscar_anonimo_2 {
+  background-image: linear-gradient(to right, #23547c, #6ec1e4) !important; /* Azul y celeste */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #FFFFFF !important; /* Blanco */
+  text-align: center !important;
 }
-.btn_eliminar_carrito{
-  background-image:#e63950;
-  color: #ffffff;
+
+.btn_eliminar_carrito {
+  background-image: #2a9df4 !important; /* Azul */
+  color: #FFFFFF !important; /* Blanco */
 }
-/*alinear el boton de buscar de anonimo junto al icono*/
+
 button.btn {
-  display: flex;
-  align-items: center; 
-  margin-right: 5px;
-}
-/*ajustar un margen del boton de buscar de anonimo junto al icono*/
-button.btn svg {
-  margin-right: 5px; 
+  display: flex !important;
+  align-items: center !important;
+  margin-right: 5px !important;
 }
 
-/*INDEX*/
-/*fondo de los productos*/
-.index_prod_1{
-  background-color: #2a2c47;
-  background-image: linear-gradient(to right, #1a1c35, #59647e);
-  color: #5d6087;
-  max-width: 250px;
-  margin: auto;  
+button.btn svg {
+  margin-right: 5px !important;
+}
+
+.index_prod_1 {
+  background-color: #2a2c47 !important;
+  background-image: linear-gradient(to right, #1a1c35, #59647e) !important;
+  color: #5d6087 !important;
+  max-width: 250px !important;
+  margin: auto !important;
 }
 
 .form-control {
-  max-width: 400px; /* Ancho máximo para los campos de texto */
+  max-width: 400px !important;
 }
 
 .index_disponible {
-  color: green;
-  font-weight: bolder;
-  
+  color: green !important;
+  font-weight: bolder !important;
 }
 
 .index_precio {
-  color: rgb(167, 8, 153);
-  font-size: 25px;
-  
+  color: #2a9df4 !important; /* Azul */
+  font-size: 25px !important;
 }
 
 .index_subscrito {
-  color: red;
-  font-size: 20px;
+  color: #D86A6A !important; /* Rojo suave */
+  font-size: 20px !important;
 }
 
 .index_oferta {
-  color: green;
-  font-weight: bolder;
-}
-.letra_blanca{
-  color: #fff;
-}
-.index_foto_fondo {
-  background-color: #000000;
-  border: 2px solid rgba(255, 105, 180, 0.5);
-  color: #FFFFFF;
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-}
-.index_btn_comprar{
-  background-image: linear-gradient(to right, #ef89a1, #e7c2c2);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #000000;  
-} 
-.admin_btn_django{
-  background-image: linear-gradient(to right, rgb(167, 8, 153), rgb(167, 8, 153));
-  box-shadow: 0 2px 4px rgb(246, 91, 192);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #ffffff; 
-  width:260px; 
-  height: 50px; 
-  font-size: 17px;
-  
-}
-.titulos{
-  color:#6ec1e4   ;
-  
-}
-.titulos_2{
-  color:#23547c;
-}
-.navbar-nav .nav-link {
-  color: #ffffff !important; 
+  color: green !important;
+  font-weight: bolder !important;
 }
 
-/*FICHA*/
+.letra_blanca {
+  color: #fff !important;
+}
+
+.index_foto_fondo {
+  background-color: #FFFFFF !important;
+  border: 2px solid rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #2a9df4 !important; /* Azul */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+}
+
+.index_btn_comprar {
+  background-image: linear-gradient(to right, #A8DADC, #A8DADC) !important; /* Celeste */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #23547c !important; /* Azul oscuro */
+}
+
+.admin_btn_django {
+  background-image: linear-gradient(to right, #2a9df4, #2a9df4) !important; /* Azul */
+  box-shadow: 0 2px 4px rgb(0, 122, 255) !important;
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #ffffff !important;
+  width: 260px !important;
+  height: 50px !important;
+  font-size: 17px !important;
+}
+
+.titulos {
+  color: #6ec1e4 !important; /* Celeste */
+}
+
+.titulos_2 {
+  color: #23547c !important; /* Azul */
+}
+
+.navbar-nav .nav-link {
+  color: #FFFFFF !important;
+}
+
 .titulo_producto_ficha {
-  font-weight: bolder;
-  font-size: 40px;
+  font-weight: bolder !important;
+  font-size: 40px !important;
 }
 
 .oferta_en_ficha {
-  color: blue;
-  font-weight: bolder;
-  font-size: 30px;
+  color: #2a9df4 !important; /* Azul */
+  font-weight: bolder !important;
+  font-size: 30px !important;
 }
 
 .precio_oferta_subscrito {
-  color: rgb(167, 8, 153);
-  font-size: 35px;
+  color: #2a9df4 !important; /* Azul */
+  font-size: 35px !important;
 }
 
 .descripcion_ficha {
-  font-size: 20px;
-  font-weight: bolder;
+  font-size: 20px !important;
+  font-weight: bolder !important;
 }
 
 .foto_ficha {
-  height: 450px;
-  margin-right: 50px;
-  font-weight: bolder;
+  height: 450px !important;
+  margin-right: 50px !important;
+  font-weight: bolder !important;
 }
 
-/*NOSOTROS*/
-.borde_nosotros{
-  background-color: #23547c;
-  padding: 10px;
-  border-radius: 15px; 
-  border: 5px solid white;
-  
-}
-.boton_correo{
-  background-image: linear-gradient(to right, #e7c2c2, #e7c2c2);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #FFFFFF;
-
+.borde_nosotros {
+  background-color: #23547c !important; /* Azul */
+  padding: 10px !important;
+  border-radius: 15px !important;
+  border: 5px solid white !important;
 }
 
-/*REGISTRO*/
-.registro_color{
-  background-color: #e7c2c2;
-  background-image: linear-gradient(to right, #e7c2c2, #e7c2c2);
-  color:black;
+.boton_correo {
+  background-image: linear-gradient(to right, #B2DFDB, #B2DFDB) !important; /* Celeste claro */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #23547c !important; /* Azul oscuro */
 }
 
-/*INGRESAR*/
+.registro_color {
+  background-color: #A8DADC !important; /* Celeste */
+  background-image: linear-gradient(to right, #A8DADC, #A8DADC) !important; /* Celeste */
+  color: #23547c !important; /* Azul oscuro */
+}
+
 .cuadro_login {
-  border: 10px solid rgba(255, 105, 180, 0.5);
-  padding: 40px;
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-  
+  border: 10px solid rgba(0, 122, 255, 0.5) !important; /* Azul */
+  padding: 40px !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
 }
+
 .boton_ingresar {
-  background-image: linear-gradient(to right, #ef89a1, #e7c2c2);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: black; 
-  width: 200px;
-  margin: auto;
-  text-align: center;
-  justify-content: center; 
-  align-items: center;
-  
+  background-image: linear-gradient(to right, #A8DADC, #A8DADC) !important; /* Celeste */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #23547c !important; /* Azul oscuro */
+  width: 200px !important;
+  margin: auto !important;
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-/*Carrito de compras*/
 th.carrito_color_tabla {
-  background-color: #d55674;
+  background-color: #A8DADC !important; /* Celeste */
 }
 
-.color_footer{
-  color:rgba(255, 105, 180, 0.5);
+.color_footer {
+  color: rgba(0, 122, 255, 0.5) !important; /* Azul */
 }
 
 .color_ropa {
-  background-color: #2a2c47;
-  background-image: linear-gradient(to right, #1a1c35, #59647e);
-  color: white;
+  background-color: #2a2c47 !important;
+  background-image: linear-gradient(to right, #1a1c35, #59647e) !important;
+  color: white !important;
 }
 
-/*Admistrador*/
-.admin_foto{
-  max-width: 450px;
-  margin-left: 200px;  
+.admin_foto {
+  max-width: 450px !important;
+  margin-left: 200px !important;
 }
-
-/*Subrayado cuando*/
 
 td.ver-detalle {
-  color: blue; 
-  text-decoration: none; 
-  cursor: pointer; 
+  color: #2a9df4 !important; /* Azul */
+  text-decoration: none !important;
+  cursor: pointer !important;
 }
+
 td.ver-detalle:hover {
-  text-decoration: underline; 
-  background-color:#cb6e84;
+  text-decoration: underline !important;
+  background-color: #A8DADC !important; /* Celeste */
 }
 
 .boton_eliminar {
-  background-color: #7073a3;
-  border-color: black; 
-  width: 100px;
-  text-align: center;
-  justify-content: center; 
-  align-items: center;
-  margin: auto ;
-  text-align: center;
+  background-color: #7073a3 !important;
+  border-color: #23547c !important; /* Azul oscuro */
+  width: 100px !important;
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-/*Botones de ventas*/
-.botones-container button {
-  display: inline-block;
-  margin-right: 5px; /* Espacio entre los botones */
-}
-.error-text {
-  color: red;
-}
-.btn-primary {
-  border:  transparent; /* Borde inicial transparente */
-}
-.btn-primary:hover {
-  outline: none; /* Sin borde azul al enfocar */
-  border: transparent; /* Borde transparente al enfocar o pasar el ratón */
-  background-color: #0056b3; /* Cambia el color de fondo si es necesario */
-}
-.boton_ver_detalle{
-  background-image: linear-gradient(to right, #d8b0b8, #d0a5a5);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #000000;
-  text-align: center;
-  
-}
-.boton_ropa{
-  background-image: linear-gradient(to right, #ef89a1, #e7c2c2);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: rgb(0, 0, 0); 
-  text-align: center;
+.boton_ropa_2 {
+  background-image: linear-gradient(to right, #2a9df4, #A8DADC) !important; /* Azul y celeste */
+  box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5) !important; /* Azul */
+  border-color: rgba(0, 122, 255, 0.5) !important; /* Azul */
+  color: #ffffff !important;
 }
 
-.letra_rosa{
-  color:#ef89a1;
-}
-.tabla_carrito{
-  background-color:#d55674; 
-  border-color: #d55674;
+.tabla_producto {
+  width: 100% !important;
+  border-collapse: collapse !important;
 }
 
-.center-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-/*boton anterior siguiente de carrito*/
-.page-link {
-  background-color: #ef89a1 !important;
-  color: rgb(0, 0, 0) !important;
-  border-color: rgba(255, 105, 180, 0.5); /* Color de borde blanco */
-  box-shadow: 0 2px 4px rgba(255, 79, 167, 0.807);
-
-}
-.page-link:hover {
-  background-color: #cb6e84 !important;
-  border-color: rgba(255, 105, 180, 0.5); /* Color de borde blanco */
-  box-shadow: 0 2px 4px rgba(255, 79, 167, 0.807);
-  color: rgb(0, 0, 0) !important;
-
-  
-}
-.page-item.active .page-link {
-  background-color: #cb6e84 !important;
-  color: rgba(0, 0, 0, 0.5) !important; /* Color de texto blanco para el número activo */
-  border-color: rgba(255, 105, 180, 0.5); /* Color de borde blanco */
-  box-shadow: 0 2px 4px rgba(255, 79, 167, 0.807);
-
+.tabla_producto th {
+  background-color: #A8DADC !important; /* Celeste */
 }
 
-/*boton mostrar y buscar de carrito*/
-.dataTables_length,
-.dataTables_filter {
-    color: #ef89a1 !important; /* Cambia el color del texto */
-}
-.dataTables_length select,
-.dataTables_filter input {
-  background-color:#e7c2c2 !important;
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #000000;
-}
-.dataTables_length select:focus,
-.dataTables_filter input:focus {
-    outline: none;
-    box-shadow: 0 0 5px #cb6e84;
+.tabla_producto td,
+.tabla_producto th {
+  padding: 8px !important;
+  text-align: left !important;
+  border: 1px solid #ddd !important;
 }
 
-/* Estilos para formularios */
-#form input[type="text"] {
-  background-color: linear-gradient(to right, #e7c2c2, #e7c2c2);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #000000;
+.tabla_producto tr:nth-child(even) {
+  background-color: #f2f2f2 !important;
 }
 
-
-
-#form input[type="number"] {
-  background-color: linear-gradient(to right, #e7c2c2, #e7c2c2);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-color: rgba(255, 105, 180, 0.5);
-  color: #000000;
+.tabla_producto tr:hover {
+  background-color: #ddd !important;
 }
 
-.dataTables_info{
-  color: #ef89a1;
-}
-#form label,
-#form .form-group > label,
-#form .form-group > .helptext,
-#form .form-check-label {
-    color: #23547c;
-    font-weight: bold;
-    font-size: 18px; 
+.tabs {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 50px !important;
 }
 
-.form-text {
-
-  color: #bc6579 !important;
-}
-/* Estilos para form-select */
-.form-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #000000;
-  background-color: #e7c2c2 !important;
-  border: 1px solid rgba(255, 105, 180, 0.5);
-  box-shadow: 0 2px 4px rgba(255, 105, 180, 0.5);
-  border-radius: 4px;
-  outline: none;
-  cursor: pointer;
-  user-select: auto;
+.tab {
+  padding: 10px 20px !important;
+  border: 1px solid #ddd !important;
+  margin-right: 5px !important;
+  cursor: pointer !important;
 }
 
-/* Estilo cuando el selector está enfocado */
-.form-select:focus {
-  border-color: #ff69b4;
-  box-shadow: 0 0 5px rgba(255, 105, 180, 0.8);
+.tab:hover {
+  background-color: #A8DADC !important; /* Celeste */
 }
 
-p{
-  color: #ef89a1;
-}
-.card-body{
-  background-color: #000000;
-  color: #FFFFFF;
-   
-}
-.card .card-img-top {
-  background-color: #000000;
-  color: #FFFFFF;
+.tab.active {
+  background-color: #2a9df4 !important; /* Azul */
+  color: white !important;
 }
 
-#help_text_id_subscrito {
-  color: #ef89a1; /* Cambia el color del texto a rosado */
-  width: auto; /* Elimina el ancho de 2px */
-}
-.id_subscrito{
-  width: auto; 
-}
-input[type="checkbox"] {
-  width: 25px; /* Ancho del checkbox */
-  height: 25px; /* Altura del checkbox */
-  margin-right: 10px; /* Espacio entre el checkbox y el texto */
-  appearance: none; /* Elimina el estilo predeterminado del checkbox */
-  background-color: #fff; /* Fondo del checkbox */
-  border: 2px solid #ef89a1; /* Borde del checkbox */
-  border-radius: 3px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar por encima */
-  position: relative; /* Necesario para posicionar el tick */
+.tabcontent {
+  display: none !important;
+  padding: 20px !important;
 }
 
-input[type="checkbox"]:checked {
-  background-color: #ef89a1; /* Fondo rosado cuando está seleccionado */
-  border-color: #ef89a1; /* Borde rosado cuando está seleccionado */
+.tabcontent.active {
+  display: block !important;
 }
 
-input[type="checkbox"]:checked::before {
-  content: ''; /* El tick */
-  color: #fff; /* Color blanco del tick */
-  font-size: 12px; /* Tamaño del tick */
-  position: absolute; /* Posicionamiento absoluto */
-  top: 50%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta el tick al centro */
-}
-.table-hover .letra-boleta-anulada td {
-  color: #bd273b !important;
-}
-
-.cuadro {
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.cuadro span {
-  font-weight: bold;
-}
 
 
 

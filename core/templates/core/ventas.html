@@ -42,9 +42,9 @@
                     <span>
                         <div class="btn-group">
                             <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Anulado' %}" class="btn btn-sm btn-danger">Anular</a>
-                            <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Vendido' %}" class="btn btn-sm btn-success boton_buscar_anonimo_2">Vender</a>
-                            <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Despachado' %}" class="btn btn-sm btn-primary boton_buscar_anonimo_2">Despachar</a>
-                            <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Entregado' %}" class="btn btn-sm btn-secondary boton_buscar_anonimo_2">Entregar</a>
+                            <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'En espera' %}" class="btn btn-sm btn-success boton_buscar_anonimo_2">Vender</a>
+                            <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Atendido' %}" class="btn btn-sm btn-primary boton_buscar_anonimo_2">Despachar</a>
+                            <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Atendido flash' %}" class="btn btn-sm btn-secondary boton_buscar_anonimo_2">Entregar</a>
                         </div>
                     </span>
                 </td>
