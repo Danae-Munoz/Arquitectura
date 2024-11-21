@@ -38,7 +38,7 @@ $(document).ready(function() {
   if ($('#id_subscrito').length > 0) {
     $('#id_subscrito').wrap('<div class="row"></div>');
     $('#id_subscrito').wrap('<div class="col-sm-1" id="checkbox-subscrito"></div>');
-    $('#checkbox-subscrito').after('<div id="help_text_id_subscrito" class="col-sm-11"></div>');
+    $('#checkbox-subscrito').after('<div id="help_text_id_subscrito" class="col-sm-11" style="color:black"></div>');
     $('#help_text_id_subscrito').text(`Deseo subscribirme con un aporte
       de $3.000 mensuales a la fundación "Help a Brother" y obtener un 
       5% de descuento en todas mis compras.`);

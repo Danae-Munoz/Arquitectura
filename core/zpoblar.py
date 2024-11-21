@@ -17,11 +17,11 @@ def exec_sql(query):
         cursor.execute(query)
 
 def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario, 
-    es_staff, rut, direccion, subscrito, imagen):
-
+                  es_staff, rut, direccion, subscrito, imagen):
     try:
         print(f'Verificar si existe usuario {username}.')
 
+        # Eliminar usuario si ya existe
         if User.objects.filter(username=username).exists():
             print(f'   Eliminar {username}')
             User.objects.get(username=username).delete()
@@ -30,6 +30,8 @@ def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario,
         print(f'Iniciando creación de usuario {username}.')
 
         usuario = None
+
+        # Crear superusuario o usuario regular
         if tipo == 'Superusuario':
             print('    Crear Superuser')
             usuario = User.objects.create_superuser(username=username, password='123')
@@ -37,21 +39,28 @@ def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario,
             print('    Crear User')
             usuario = User.objects.create_user(username=username, password='123')
 
-        if tipo == 'Administrador':
-            print('    Es administrador')
-            usuario.is_staff = es_staff
-            
+        # Configurar atributos comunes del usuario
         usuario.first_name = nombre
         usuario.last_name = apellido
         usuario.email = correo
+        usuario.is_staff = es_staff if tipo in ['Administrador', 'Medico'] else False
         usuario.save()
 
+        # Configurar permisos para administrador
         if tipo == 'Administrador':
             print(f'    Dar permisos a core y apirest')
             permisos = Permission.objects.filter(content_type__app_label__in=['core', 'apirest'])
             usuario.user_permissions.set(permisos)
             usuario.save()
- 
+        
+        # Configurar lógica específica para médico
+        if tipo == 'Medico':
+            print(f'    Dar permisos a core y apirest')
+            permisos = Permission.objects.filter(content_type__app_label__in=['core', 'apirest'])
+            usuario.user_permissions.set(permisos)
+            usuario.save()
+
+        # Crear el perfil asociado
         print(f'    Crear perfil: RUT {rut}, Subscrito {subscrito}, Imagen {imagen}')
         Perfil.objects.create(
             usuario=usuario, 
@@ -63,6 +72,7 @@ def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario,
         print("    Creado correctamente")
     except Exception as err:
         print(f"    Error: {err}")
+
 
 def eliminar_tablas():
     eliminar_tabla('auth_user_groups')
@@ -103,7 +113,7 @@ def poblar_bd(test_user_email=''):
 
     crear_usuario(
         username='d.munoz',
-        tipo='Cliente', 
+        tipo='Medico', 
         nombre='Danae', 
         apellido='Munoz', 
         correo=test_user_email if test_user_email else 'd.munozo@duocuc.cl', 
@@ -285,7 +295,7 @@ def poblar_bd(test_user_email=''):
         'precio': 39990,
         'descuento_subscriptor': 10,
         'descuento_oferta': 15,
-        'imagen': 'productos/consulta_pediatria.jpg'
+        'imagen': 'productos/000008.jpg'
     },
     {
         'id': 2,
@@ -295,7 +305,7 @@ def poblar_bd(test_user_email=''):
         'precio': 49990,
         'descuento_subscriptor': 10,
         'descuento_oferta': 20,
-        'imagen': 'productos/consulta_ginecologica.jpg'
+        'imagen': 'productos/000003.jpg'
     },
     {
         'id': 3,
@@ -305,7 +315,7 @@ def poblar_bd(test_user_email=''):
         'precio': 69990,
         'descuento_subscriptor': 5,
         'descuento_oferta': 10,
-        'imagen': 'productos/consulta_cardiologia.jpg'
+        'imagen': 'productos/000001.jpg'
     },
     {
         'id': 4,
@@ -315,7 +325,7 @@ def poblar_bd(test_user_email=''):
         'precio': 49990,
         'descuento_subscriptor': 10,
         'descuento_oferta': 15,
-        'imagen': 'productos/consulta_oftalmologica.jpg'
+        'imagen': 'productos/000007.jpg'
     },
     {
         'id': 5,
@@ -325,7 +335,7 @@ def poblar_bd(test_user_email=''):
         'precio': 29990,
         'descuento_subscriptor': 5,
         'descuento_oferta': 10,
-        'imagen': 'productos/consulta_medico_general.jpg'
+        'imagen': 'productos/000004.jpg'
     },
     # Categoría "Servicios de Salud" (5 productos)
     {
@@ -336,7 +346,7 @@ def poblar_bd(test_user_email=''):
         'precio': 19990,
         'descuento_subscriptor': 5,
         'descuento_oferta': 10,
-        'imagen': 'productos/examen_laboratorio.jpg'
+        'imagen': 'productos/000014.jpg'
     },
     {
         'id': 7,
@@ -346,7 +356,7 @@ def poblar_bd(test_user_email=''):
         'precio': 24990,
         'descuento_subscriptor': 10,
         'descuento_oferta': 15,
-        'imagen': 'productos/radiografia.jpg'
+        'imagen': 'productos/000015.jpg'
     },
     {
         'id': 8,
@@ -356,7 +366,7 @@ def poblar_bd(test_user_email=''):
         'precio': 39990,
         'descuento_subscriptor': 10,
         'descuento_oferta': 20,
-        'imagen': 'productos/ecografia.jpg'
+        'imagen': 'productos/000009.jpg'
     },
     {
         'id': 9,
@@ -366,7 +376,7 @@ def poblar_bd(test_user_email=''):
         'precio': 29990,
         'descuento_subscriptor': 5,
         'descuento_oferta': 10,
-        'imagen': 'productos/electrocardiograma.jpg'
+        'imagen': 'productos/000010.png'
     },
     {
     'id': 10,
@@ -376,7 +386,7 @@ def poblar_bd(test_user_email=''):
     'precio': 34990,
     'descuento_subscriptor': 10,
     'descuento_oferta': 15,
-    'imagen': 'productos/examen_funcion_pulmonar.jpg'
+    'imagen': 'productos/000013.jpg'
     },
     {
         'id': 11,
@@ -386,7 +396,7 @@ def poblar_bd(test_user_email=''):
         'precio': 58990,
         'descuento_subscriptor': 8,
         'descuento_oferta': 12,
-        'imagen': 'productos/consulta_endocrinologica.jpg'
+        'imagen': 'productos/000002.jpg'
     },
     {
         'id': 12,
@@ -396,7 +406,7 @@ def poblar_bd(test_user_email=''):
         'precio': 79990,
         'descuento_subscriptor': 5,
         'descuento_oferta': 10,
-        'imagen': 'productos/colonoscopia.jpg'
+        'imagen': 'productos/000011.jpg'
     },
     {
         'id': 13,
@@ -406,7 +416,7 @@ def poblar_bd(test_user_email=''):
         'precio': 34990,
         'descuento_subscriptor': 7,
         'descuento_oferta': 10,
-        'imagen': 'productos/consulta_nutricional.jpg'
+        'imagen': 'productos/000006.jpg'
     },
     {
         'id': 14,
@@ -416,7 +426,7 @@ def poblar_bd(test_user_email=''):
         'precio': 49990,
         'descuento_subscriptor': 5,
         'descuento_oferta': 10,
-        'imagen': 'productos/densitometria_osea.jpg'
+        'imagen': 'productos/000012.jpg'
     },
     {
         'id': 15,
@@ -426,7 +436,7 @@ def poblar_bd(test_user_email=''):
         'precio': 64990,
         'descuento_subscriptor': 8,
         'descuento_oferta': 12,
-        'imagen': 'productos/consulta_neurologica.jpg'
+        'imagen': 'productos/000005.jpg'
     }
    
 ]

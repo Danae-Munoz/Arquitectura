@@ -70,7 +70,7 @@ $(document).ready(function() {
       rules: {
         'tipo_usuario': {
           required: true,
-          inList: ['Cliente', 'Administrador'],
+          inList: ['Cliente', 'Administrador', 'Medico'],
         },
         'first_name': {
           required: true,

@@ -300,7 +300,7 @@ def usuarios(request, accion, id):
         if form_usuario.is_valid() and form_perfil.is_valid():
             usuario = form_usuario.save(commit=False)
             tipo_usuario = form_perfil.cleaned_data['tipo_usuario']
-            usuario.is_staff = tipo_usuario in ['Administrador', 'Superusuario']
+            usuario.is_staff = tipo_usuario in ['Administrador', 'Medico', 'Superusuario']
             perfil = form_perfil.save(commit=False)
             usuario.save()
             perfil.usuario_id = usuario.id

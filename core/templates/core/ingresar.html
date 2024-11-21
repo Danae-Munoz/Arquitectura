@@ -5,38 +5,36 @@
 {% block content %}
 <br>
 <div class="container">
-  <h1 class="text-center titulos">Ingresar</h1>
-  <div class="row" >
-    
+  <h1 class="text-center titulos" style="color: #2a9df4;">Ingresar</h1>
+  <div class="row">
   
-<div class="container-fluid">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <form id="form" method="POST" class="border border-3 p-4">
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-5">
+      <div class="col-6">
+        <form id="form" method="POST" class="border border-3 p-4" style="border-color: #A8DADC;">
 
-        {% csrf_token %} 
-        
-        <!-- Botones -->
-        {{ form|as_bootstrap_form }}
-        
-        <div class="text-center mt-4">
-          <button type="submit" class="btn btn-primary boton_buscar_anonimo_2"> Ingresar </button>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <a class="titulos_2" href="{% url 'registro' %}">Aun no tengo una cuenta</a>
+          {% csrf_token %}
           
-        </div>
-        
-      </form>
+          <!-- Botones -->
+          {{ form|as_bootstrap_form }}
+          
+          <div class="text-center mt-4">
+            <button type="submit" class="btn" style="background-image: linear-gradient(to right, #2a9df4, #A8DADC); box-shadow: 0 2px 4px rgba(0, 122, 255, 0.5); border-color: rgba(0, 122, 255, 0.5); color: #ffffff;">Ingresar</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="titulos_2" href="{% url 'registro' %}" style="color: #2a9df4;">Aun no tengo una cuenta</a>
+          </div>
+          
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Combobox de usuarios (QUITAR EN VERSIÓN DE PRODUCCIÓN DEL SOFTWARE) -->
-<!-- NO LO BORRES PARA QUE PUEDAS HACER TUS PRUEBAS MÁS RÁPIDAMENTE -->
-{% include 'common/combobox_usuarios.html' %}
+  <!-- Combobox de usuarios (QUITAR EN VERSIÓN DE PRODUCCIÓN DEL SOFTWARE) -->
+  <!-- NO LO BORRES PARA QUE PUEDAS HACER TUS PRUEBAS MÁS RÁPIDAMENTE -->
+  {% include 'common/combobox_usuarios.html' %}
 
 {% endblock content %}
 

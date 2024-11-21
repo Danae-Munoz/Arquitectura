@@ -21,10 +21,10 @@ body {
 }
 
 .nav_anonimo {
-  background-image: linear-gradient(to right, #FFFFFF, #A8DADC) !important; /* Blanco y celeste */
-  box-shadow: 0 2px 4px #ADD8E6 !important;
-  border-bottom: 1px solid #ADD8E6 !important;
-  color: #2a9df4 !important; /* Azul */
+  background-image: linear-gradient(to right, #23547c );
+  box-shadow: 0 2px 4px #ADD8E6;
+  border-bottom: 1px solid #ADD8E6;
+  color: #FFFFFF;
 }
 
 .boton_buscar_anonimo {
@@ -296,6 +296,16 @@ td.ver-detalle:hover {
 .tabcontent.active {
   display: block !important;
 }
+#help_text_id_subscrito {
+  font-size: 0.9rem;
+  color: #555 !important;
+  margin-top: 0.5rem;
+}
+#checkbox-subscrito {
+  display: flex;
+  align-items: center;
+}
+
 
 
 
