@@ -43,7 +43,7 @@ def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario,
         usuario.first_name = nombre
         usuario.last_name = apellido
         usuario.email = correo
-        usuario.is_staff = es_staff if tipo in ['Administrador', 'Medico'] else False
+        usuario.is_staff = es_staff if tipo in ['Administrador', 'Medico', 'Secretario', 'Cajero'] else False
         usuario.save()
 
         # Configurar permisos para administrador
@@ -55,6 +55,18 @@ def crear_usuario(username, tipo, nombre, apellido, correo, es_superusuario,
         
         # Configurar lógica específica para médico
         if tipo == 'Medico':
+            print(f'    Dar permisos a core y apirest')
+            permisos = Permission.objects.filter(content_type__app_label__in=['core', 'apirest'])
+            usuario.user_permissions.set(permisos)
+            usuario.save()
+        # Configurar lógica específica para médico
+        if tipo == 'Secretario':
+            print(f'    Dar permisos a core y apirest')
+            permisos = Permission.objects.filter(content_type__app_label__in=['core', 'apirest'])
+            usuario.user_permissions.set(permisos)
+            usuario.save()
+        # Configurar lógica específica para médico
+        if tipo == 'Cajero':
             print(f'    Dar permisos a core y apirest')
             permisos = Permission.objects.filter(content_type__app_label__in=['core', 'apirest'])
             usuario.user_permissions.set(permisos)

@@ -83,7 +83,7 @@ class Migration(migrations.Migration):
             name='Perfil',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('tipo_usuario', models.CharField(choices=[('Cliente', 'Cliente'), ('Administrador', 'Administrador'),('Medico', 'Medico'), ('Superusuario', 'Superusuario')], max_length=50, verbose_name='Tipo de usuario')),
+                ('tipo_usuario', models.CharField(choices=[('Cliente', 'Cliente'), ('Administrador', 'Administrador'),('Medico', 'Medico'), ('Secretario', 'Secretario'),('Cajero', 'Cajero'),('Superusuario', 'Superusuario')], max_length=50, verbose_name='Tipo de usuario')),
                 ('rut', models.CharField(max_length=15, verbose_name='RUT')),
                 ('direccion', models.CharField(max_length=800, verbose_name='Dirección')),
                 ('subscrito', models.BooleanField(verbose_name='Subscrito')),
